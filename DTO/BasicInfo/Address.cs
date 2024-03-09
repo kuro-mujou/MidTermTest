@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
 
 namespace DTO.BasicInfo
 {
@@ -10,21 +6,23 @@ namespace DTO.BasicInfo
     {
         public Address()
         {
-            Street = string.Empty;
             City = string.Empty;
             Country = string.Empty;
         }
-        public Address(string street, string city, string country)
+        public Address(string city, string country)
         {
-            Street = street;
             City = city;
             Country = country;
         }
+        public static Address StringToAddress(string address)
+        {
+            string[] splited = address.Split(',');
+            return new Address(splited[0], splited[1]);
+        }
         public override string ToString()
         {
-            return Street + " " + City + " " + Country;
+            return City + "," + Country;
         }
-        public string Street { get; set; }
         public string City { get; set; }
         public string Country { get; set; }
     }

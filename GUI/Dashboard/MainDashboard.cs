@@ -1,12 +1,6 @@
 ﻿using GUI.CustomUIComponent;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GUI.Dashboard
@@ -68,7 +62,7 @@ namespace GUI.Dashboard
 
         private void RoundButton2_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new ContentForm2(), sender);
+            OpenChildForm(new CustomerManagement(), sender);
         }
 
         private void RoundButton3_Click(object sender, EventArgs e)

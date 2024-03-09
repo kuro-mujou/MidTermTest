@@ -67,11 +67,11 @@
     <Compile Include="Dashboard\HotelRoomManagement.Designer.cs">
       <DependentUpon>HotelRoomManagement.cs</DependentUpon>
     </Compile>
-    <Compile Include="Dashboard\ContentForm2.cs">
+    <Compile Include="Dashboard\CustomerManagement.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Dashboard\ContentForm2.Designer.cs">
-      <DependentUpon>ContentForm2.cs</DependentUpon>
+    <Compile Include="Dashboard\CustomerManagement.Designer.cs">
+      <DependentUpon>CustomerManagement.cs</DependentUpon>
     </Compile>
     <Compile Include="Dashboard\ContentForm3.cs">
       <SubType>Form</SubType>
@@ -102,8 +102,8 @@
     <EmbeddedResource Include="CustomUIComponent\RoundTextBox.resx">
       <DependentUpon>RoundTextBox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Dashboard\ContentForm2.resx">
-      <DependentUpon>ContentForm2.cs</DependentUpon>
+    <EmbeddedResource Include="Dashboard\CustomerManagement.resx">
+      <DependentUpon>CustomerManagement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dashboard\ContentForm3.resx">
       <DependentUpon>ContentForm3.cs</DependentUpon>

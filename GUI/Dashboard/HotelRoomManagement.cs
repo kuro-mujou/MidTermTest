@@ -180,17 +180,17 @@ namespace GUI.Dashboard
                     switch (currentButton.Name)
                     {
                         case "Btn_Add":
-                            MessageBox.Show(Logic_Rooms.CheckLogicAddRow(GetUIData()));
+                            MessageBox.Show(Logic_Rooms.CheckLogicAddRow(room_Information));
                             LoadRooms();
                             break;
 
                         case "Btn_Edit":
-                            MessageBox.Show(Logic_Rooms.CheckLogicEditRow(GetUIData()));
+                            MessageBox.Show(Logic_Rooms.CheckLogicEditRow(room_Information));
                             LoadRooms();
                             break;
 
                         case "Btn_Delete":
-                            MessageBox.Show(Logic_Rooms.CheckLogicDeleteRow(GetUIData()));
+                            MessageBox.Show(Logic_Rooms.CheckLogicDeleteRow(room_Information));
                             LoadRooms();
                             break;
                     }
@@ -231,7 +231,7 @@ namespace GUI.Dashboard
             UpdateUIState(false);
             ActivateButton(sender);
             isSearching = true;
-            Btn_Reload.Enabled = false;
+            Btn_Reload.Enabled = true;
             Btn_Add.Enabled = false;
             Btn_Edit.Enabled = false;
             Btn_Delete.Enabled = false;
