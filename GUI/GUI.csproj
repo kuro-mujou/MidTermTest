@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E306C9C5-F4A8-4680-96A8-D5DBE2389D6C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>GUI</RootNamespace>
+    <AssemblyName>GUI</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CustomUIComponent\CustomCombobox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomUIComponent\RoundButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomUIComponent\RoundButton.Designer.cs">
+      <DependentUpon>RoundButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomUIComponent\RoundTextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomUIComponent\RoundTextBox.Designer.cs">
+      <DependentUpon>RoundTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard\HotelRoomManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dashboard\HotelRoomManagement.Designer.cs">
+      <DependentUpon>HotelRoomManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard\ContentForm2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dashboard\ContentForm2.Designer.cs">
+      <DependentUpon>ContentForm2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard\ContentForm3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dashboard\ContentForm3.Designer.cs">
+      <DependentUpon>ContentForm3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard\ContentForm4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dashboard\ContentForm4.Designer.cs">
+      <DependentUpon>ContentForm4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard\MainDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dashboard\MainDashboard.Designer.cs">
+      <DependentUpon>MainDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login\Form_Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\Form_Login.Designer.cs">
+      <DependentUpon>Form_Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CustomUIComponent\RoundTextBox.resx">
+      <DependentUpon>RoundTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dashboard\ContentForm2.resx">
+      <DependentUpon>ContentForm2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dashboard\ContentForm3.resx">
+      <DependentUpon>ContentForm3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dashboard\ContentForm4.resx">
+      <DependentUpon>ContentForm4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dashboard\HotelRoomManagement.resx">
+      <DependentUpon>HotelRoomManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dashboard\MainDashboard.resx">
+      <DependentUpon>MainDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Login\Form_Login.resx">
+      <DependentUpon>Form_Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{b2933e4b-a154-49b2-8e86-4be7e5b3165e}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DTO\DTO.csproj">
+      <Project>{a9629f37-6ded-4889-acd1-db692e41a563}</Project>
+      <Name>DTO</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Hotel_Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Hotel_Icon.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
