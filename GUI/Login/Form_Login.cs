@@ -16,6 +16,7 @@ namespace GUI
 
         private void Btn_Login_Click(object sender, EventArgs e)
         {
+            ResetUI(sender, e);
             Login_Account Account = new Login_Account();
             Account.UserName = Txt_Username.Texts;
             Account.Password = Txt_Password.Texts;
@@ -38,7 +39,7 @@ namespace GUI
             mainDashboard.Show();
         }
 
-        private void TextBoxClick(object sender, EventArgs e)
+        private void ResetUI(object sender, EventArgs e)
         {
             Label_WarningUsername.Text = string.Empty;
             Label_WarningPassword.Text = string.Empty;

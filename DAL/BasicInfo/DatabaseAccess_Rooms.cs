@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static DTO.BasicInfo.HotelRoom.Room_Information;
 
 namespace DAL.BasicInfo
 {
@@ -49,6 +50,12 @@ namespace DAL.BasicInfo
         public static object SearchByRoomType(string roomType)
         {
             string sqlSearchStatus = "select * from Room_Information where RoomType = '" + roomType + "'";
+            return DatabaseHelper.LoadDataTable(sqlSearchStatus, conn);
+        }
+
+        public static object SearchByNumber(string roomNumber)
+        {
+            string sqlSearchStatus = "select * from Room_Information where Number = '" + roomNumber + "'";
             return DatabaseHelper.LoadDataTable(sqlSearchStatus, conn);
         }
     }

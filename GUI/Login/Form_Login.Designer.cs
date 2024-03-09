@@ -44,6 +44,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::GUI.Properties.Resources.Hotel_Icon;
+            this.pictureBox1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.pictureBox1.Location = new System.Drawing.Point(355, 92);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(90, 90);
@@ -55,6 +56,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.label1.Location = new System.Drawing.Point(198, 199);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(70, 16);
@@ -65,6 +67,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.label2.Location = new System.Drawing.Point(201, 242);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(67, 16);
@@ -75,6 +78,7 @@
             // 
             this.Label_WarningUsername.AutoSize = true;
             this.Label_WarningUsername.ForeColor = System.Drawing.Color.Red;
+            this.Label_WarningUsername.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.Label_WarningUsername.Location = new System.Drawing.Point(532, 199);
             this.Label_WarningUsername.Name = "Label_WarningUsername";
             this.Label_WarningUsername.Size = new System.Drawing.Size(0, 16);
@@ -84,6 +88,7 @@
             // 
             this.Label_WarningPassword.AutoSize = true;
             this.Label_WarningPassword.ForeColor = System.Drawing.Color.Red;
+            this.Label_WarningPassword.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.Label_WarningPassword.Location = new System.Drawing.Point(532, 242);
             this.Label_WarningPassword.Name = "Label_WarningPassword";
             this.Label_WarningPassword.Size = new System.Drawing.Size(0, 16);
@@ -93,12 +98,12 @@
             // 
             this.Label_WarningAccount.AutoSize = true;
             this.Label_WarningAccount.ForeColor = System.Drawing.Color.Red;
+            this.Label_WarningAccount.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.Label_WarningAccount.Location = new System.Drawing.Point(304, 317);
             this.Label_WarningAccount.Name = "Label_WarningAccount";
             this.Label_WarningAccount.Size = new System.Drawing.Size(0, 16);
             this.Label_WarningAccount.TabIndex = 6;
             this.Label_WarningAccount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.Label_WarningAccount.Click += new System.EventHandler(this.TextBoxClick);
             // 
             // Btn_Login
             // 
@@ -112,6 +117,7 @@
             this.Btn_Login.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
             this.Btn_Login.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btn_Login.ForeColor = System.Drawing.Color.Black;
+            this.Btn_Login.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.Btn_Login.Location = new System.Drawing.Point(340, 274);
             this.Btn_Login.Name = "Btn_Login";
             this.Btn_Login.Size = new System.Drawing.Size(120, 40);
@@ -129,7 +135,7 @@
             this.Txt_Password.BorderFocusColor = System.Drawing.Color.LightGray;
             this.Txt_Password.BorderRadius = 15;
             this.Txt_Password.BorderSize = 2;
-            this.Txt_Password.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Txt_Password.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
             this.Txt_Password.ForeColor = System.Drawing.Color.White;
             this.Txt_Password.Location = new System.Drawing.Point(275, 232);
             this.Txt_Password.Margin = new System.Windows.Forms.Padding(4);
@@ -139,11 +145,12 @@
             this.Txt_Password.PasswordChar = true;
             this.Txt_Password.PlaceholderColor = System.Drawing.Color.LightGray;
             this.Txt_Password.PlaceholderText = "password";
+            this.Txt_Password.ReadOnly = false;
             this.Txt_Password.Size = new System.Drawing.Size(250, 35);
             this.Txt_Password.TabIndex = 2;
             this.Txt_Password.Texts = "";
             this.Txt_Password.UnderlinedStyle = false;
-            this.Txt_Password.Click += new System.EventHandler(this.TextBoxClick);
+            this.Txt_Password.Click += new System.EventHandler(this.ResetUI);
             this.Txt_Password.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPressed);
             // 
             // Txt_Username
@@ -153,7 +160,7 @@
             this.Txt_Username.BorderFocusColor = System.Drawing.Color.LightGray;
             this.Txt_Username.BorderRadius = 15;
             this.Txt_Username.BorderSize = 2;
-            this.Txt_Username.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Txt_Username.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
             this.Txt_Username.ForeColor = System.Drawing.Color.White;
             this.Txt_Username.Location = new System.Drawing.Point(275, 189);
             this.Txt_Username.Margin = new System.Windows.Forms.Padding(4);
@@ -163,11 +170,12 @@
             this.Txt_Username.PasswordChar = false;
             this.Txt_Username.PlaceholderColor = System.Drawing.Color.LightGray;
             this.Txt_Username.PlaceholderText = "username";
+            this.Txt_Username.ReadOnly = false;
             this.Txt_Username.Size = new System.Drawing.Size(250, 35);
             this.Txt_Username.TabIndex = 1;
             this.Txt_Username.Texts = "";
             this.Txt_Username.UnderlinedStyle = false;
-            this.Txt_Username.Click += new System.EventHandler(this.TextBoxClick);
+            this.Txt_Username.Click += new System.EventHandler(this.ResetUI);
             this.Txt_Username.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPressed);
             // 
             // Form_Login
@@ -186,6 +194,7 @@
             this.Controls.Add(this.Txt_Username);
             this.Controls.Add(this.pictureBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.Name = "Form_Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form_Login";

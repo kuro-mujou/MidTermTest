@@ -33,18 +33,18 @@ namespace DAL
         {
             SqlCommand comm = new SqlCommand(sqlNon, conn);
             conn.Open();
-            //try
-            //{
+            try
+            {
                 return comm.ExecuteNonQuery();
-            //}
-            //catch (SqlException)
-            //{
-            //    return 0;
-            //}
-            //finally
-            //{
-            //    conn.Close();
-            //}
+            }
+            catch (SqlException)
+            {
+                return 0;
+            }
+            finally
+            {
+                conn.Close();
+            }
         }
     }
 }

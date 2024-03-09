@@ -1,14 +1,5 @@
 ﻿using DAL.BasicInfo;
-using DAL.Login;
 using DTO.BasicInfo.HotelRoom;
-using DTO.Login;
-using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BLL.BasicInfo
 {
@@ -21,6 +12,10 @@ namespace BLL.BasicInfo
         public object CheckLogicSeachByStatus(string status)
         {
             return DatabaseAccess_Rooms.SearchByStatus(status);
+        }
+        public object CheckLogicSeachByRoomNumber(string roomNumber)
+        {
+            return DatabaseAccess_Rooms.SearchByNumber(roomNumber);
         }
         public object CheckLogicSeachByRoomType(string roomType)
         {
@@ -59,6 +54,5 @@ namespace BLL.BasicInfo
                 return "fail";
             }
         }
-
     }
 }

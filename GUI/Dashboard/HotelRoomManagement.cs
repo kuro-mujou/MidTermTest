@@ -2,13 +2,7 @@
 using DTO.BasicInfo.HotelRoom;
 using GUI.CustomUIComponent;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GUI.Dashboard
@@ -17,7 +11,7 @@ namespace GUI.Dashboard
     {
         private Logic_Rooms Logic_Rooms = new Logic_Rooms();
         private RoundButton currentButton;
-        private bool isSearching = false; 
+        private bool isSearching = false;
 
         public HotelRoomManagement()
         {
@@ -53,7 +47,7 @@ namespace GUI.Dashboard
             ComboBox_RoomStatus.Enabled = true;
             Btn_Confirm.Visible = true;
             Btn_Cancel.Visible = true;
-            
+
             Txt_RoomNumber.Texts = string.Empty;
             ComboRox_RoomType.SelectedItem = null;
             ComboBox_RoomStatus.SelectedItem = null;
@@ -76,12 +70,10 @@ namespace GUI.Dashboard
             {
                 DataGridView dgv = (DataGridView)sender;
                 string columnName = dgv.Columns[e.ColumnIndex].Name;
-
-                // Example: Set background color based on RoomStatus
                 if (columnName == "Status")
                 {
                     object cellValue = dgv.Rows[e.RowIndex].Cells["Status"].Value;
-                    if(cellValue != null)
+                    if (cellValue != null)
                     {
                         string roomStatus = cellValue.ToString();
                         switch (roomStatus)
@@ -110,9 +102,10 @@ namespace GUI.Dashboard
         {
             if (e.RowIndex >= 0)
             {
-                if(!isSearching)
+                if (!isSearching)
                 {
                     DataGridViewRow selectedRow = Table_Room.Rows[e.RowIndex];
+
                     Txt_RoomNumber.Texts = selectedRow.Cells["Number"].Value.ToString();
                     ComboRox_RoomType.SelectedItem = selectedRow.Cells["RoomType"].Value.ToString();
                     ComboBox_RoomStatus.SelectedItem = selectedRow.Cells["Status"].Value.ToString();
@@ -130,7 +123,7 @@ namespace GUI.Dashboard
                             SearchByStatus(selectedRow.Cells["Status"].Value.ToString());
                             break;
                     }
-                } 
+                }
             }
         }
         private void ActivateButton(object btnSender)
@@ -143,7 +136,7 @@ namespace GUI.Dashboard
                     currentButton = (RoundButton)btnSender;
                     currentButton.BackColor = Color.Black;
                     currentButton.ForeColor = Color.White;
-                    currentButton.Font = new System.Drawing.Font("Calibri", 12.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                    currentButton.Font = new Font("Calibri", 12.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                 }
             }
         }
@@ -155,37 +148,52 @@ namespace GUI.Dashboard
                 {
                     previousBtn.BackColor = Color.White;
                     previousBtn.ForeColor = Color.Black;
-                    previousBtn.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                    previousBtn.Font = new Font("Calibri", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                 }
             }
         }
         private Room_Information GetUIData()
         {
-            int.TryParse(Txt_RoomNumber.Texts, out int roomNumber);
-            Enum.TryParse(ComboRox_RoomType.SelectedItem.ToString(), out Room_Information.Room_Type room_Type);
-            Enum.TryParse(ComboBox_RoomStatus.SelectedItem.ToString(), out Room_Information.Room_Status room_Status);
-            return new Room_Information(roomNumber, room_Type, room_Status);
-        }
-        private void FunctionalButton(object sender,EventArgs e)
-        {
-            if(sender != null)
+            try
             {
-                switch (currentButton.Name)
+                string num = Txt_RoomNumber.Texts;
+                string type = (string)ComboRox_RoomType.SelectedItem;
+                string status = (string)ComboBox_RoomStatus.SelectedItem;
+                int.TryParse(num, out int roomNumber);
+                Room_Information.Room_Type room_Type = (Room_Information.Room_Type)Enum.Parse(typeof(Room_Information.Room_Type), type);
+                Room_Information.Room_Status room_Status = (Room_Information.Room_Status)Enum.Parse(typeof(Room_Information.Room_Status), status);
+                return new Room_Information(roomNumber, room_Type, room_Status);
+            }
+            catch(Exception)
+            {
+                MessageBox.Show("Data shound't be empty");
+                return null;
+            }
+        }
+        private void FunctionalButton(object sender, EventArgs e)
+        {
+            if (sender != null)
+            {
+                Room_Information room_Information = GetUIData();
+                if (room_Information != null)
                 {
-                    case "Btn_Add":
-                        MessageBox.Show(Logic_Rooms.CheckLogicAddRow(GetUIData()));
-                        LoadRooms();
-                        break;
+                    switch (currentButton.Name)
+                    {
+                        case "Btn_Add":
+                            MessageBox.Show(Logic_Rooms.CheckLogicAddRow(GetUIData()));
+                            LoadRooms();
+                            break;
 
-                    case "Btn_Edit":
-                        MessageBox.Show(Logic_Rooms.CheckLogicEditRow(GetUIData()));
-                        LoadRooms();
-                        break;
+                        case "Btn_Edit":
+                            MessageBox.Show(Logic_Rooms.CheckLogicEditRow(GetUIData()));
+                            LoadRooms();
+                            break;
 
-                    case "Btn_Delete":
-                        MessageBox.Show(Logic_Rooms.CheckLogicDeleteRow(GetUIData()));
-                        LoadRooms();
-                        break;
+                        case "Btn_Delete":
+                            MessageBox.Show(Logic_Rooms.CheckLogicDeleteRow(GetUIData()));
+                            LoadRooms();
+                            break;
+                    }
                 }
             }
         }
@@ -227,12 +235,13 @@ namespace GUI.Dashboard
             Btn_Add.Enabled = false;
             Btn_Edit.Enabled = false;
             Btn_Delete.Enabled = false;
+            Btn_Confirm.Visible = false;
         }
 
         private void Btn_Confirm_Click(object sender, EventArgs e)
         {
             isSearching = false;
-            FunctionalButton(sender,e);
+            FunctionalButton(sender, e);
             DefaultUIState();
             ActivateButton(sender);
         }
@@ -254,6 +263,11 @@ namespace GUI.Dashboard
             Table_Room.DataSource = Logic_Rooms.CheckLogicSeachByRoomType(roomType);
             Table_Room.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
         }
+        private void SearchByNumber(string roomNumber)
+        {
+            Table_Room.DataSource = Logic_Rooms.CheckLogicSeachByRoomNumber(roomNumber);
+            Table_Room.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+        }
         private void ComboBox_RoomStatus_OnSelectedIndexChanged(object sender, EventArgs e)
         {
             if (isSearching && sender.GetType().Equals(typeof(ComboBox)))
@@ -272,5 +286,13 @@ namespace GUI.Dashboard
             }
         }
 
+        private void Txt_RoomNumber_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (isSearching && e.KeyChar == (char)Keys.Enter)
+            {
+                string roomNumber = Txt_RoomNumber.Texts;
+                SearchByNumber(roomNumber);
+            }
+        }
     }
 }
