@@ -17,9 +17,7 @@ namespace GUI.Dashboard
     {
         private Logic_Rooms Logic_Rooms = new Logic_Rooms();
         private RoundButton currentButton;
-        private bool isSearching = false;
-        private bool isClickRoomStatus = false;
-        private bool isClickRoomType = false; 
+        private bool isSearching = false; 
 
         public HotelRoomManagement()
         {
@@ -37,11 +35,16 @@ namespace GUI.Dashboard
             ComboRox_RoomType.Enabled = false;
             ComboBox_RoomStatus.Enabled = false;
             Btn_Confirm.Visible = false;
+            Btn_Cancel.Visible = false;
             Btn_Search.Enabled = true;
             Btn_Reload.Enabled = true;
             Btn_Add.Enabled = true;
             Btn_Edit.Enabled = true;
             Btn_Delete.Enabled = true;
+
+            Txt_RoomNumber.Texts = string.Empty;
+            ComboRox_RoomType.SelectedItem = null;
+            ComboBox_RoomStatus.SelectedItem = null;
         }
         private void UpdateUIState(bool isEditing)
         {
@@ -49,6 +52,11 @@ namespace GUI.Dashboard
             ComboRox_RoomType.Enabled = true;
             ComboBox_RoomStatus.Enabled = true;
             Btn_Confirm.Visible = true;
+            Btn_Cancel.Visible = true;
+            
+            Txt_RoomNumber.Texts = string.Empty;
+            ComboRox_RoomType.SelectedItem = null;
+            ComboBox_RoomStatus.SelectedItem = null;
         }
         private void LoadRooms()
         {
@@ -102,24 +110,27 @@ namespace GUI.Dashboard
         {
             if (e.RowIndex >= 0)
             {
-                DataGridViewRow selectedRow = Table_Room.Rows[e.RowIndex];
-                Txt_RoomNumber.Texts = selectedRow.Cells["Number"].Value.ToString();
-                ComboRox_RoomType.SelectedItem = selectedRow.Cells["RoomType"].Value.ToString();
-                ComboBox_RoomStatus.SelectedItem = selectedRow.Cells["Status"].Value.ToString();
-                switch (Table_Room.Columns[e.ColumnIndex].Name)
+                if(!isSearching)
                 {
-                    case "RoomType":
-                        isClickRoomType = true;
-                        ComboRox_RoomType_OnSelectedIndexChanged(sender, EventArgs.Empty);
-                        isClickRoomType = false;
-                        break;
-
-                    case "Status":
-                        isClickRoomStatus = true;
-                        ComboBox_RoomStatus_OnSelectedIndexChanged(sender, EventArgs.Empty);
-                        isClickRoomStatus = false;
-                        break;
+                    DataGridViewRow selectedRow = Table_Room.Rows[e.RowIndex];
+                    Txt_RoomNumber.Texts = selectedRow.Cells["Number"].Value.ToString();
+                    ComboRox_RoomType.SelectedItem = selectedRow.Cells["RoomType"].Value.ToString();
+                    ComboBox_RoomStatus.SelectedItem = selectedRow.Cells["Status"].Value.ToString();
                 }
+                else
+                {
+                    DataGridViewRow selectedRow = Table_Room.Rows[e.RowIndex];
+                    switch (Table_Room.Columns[e.ColumnIndex].Name)
+                    {
+                        case "RoomType":
+                            SearchByType(selectedRow.Cells["RoomType"].Value.ToString());
+                            break;
+
+                        case "Status":
+                            SearchByStatus(selectedRow.Cells["Status"].Value.ToString());
+                            break;
+                    }
+                } 
             }
         }
         private void ActivateButton(object btnSender)
@@ -150,7 +161,7 @@ namespace GUI.Dashboard
         }
         private Room_Information GetUIData()
         {
-            int roomNumber = int.Parse(Txt_RoomNumber.Texts);
+            int.TryParse(Txt_RoomNumber.Texts, out int roomNumber);
             Enum.TryParse(ComboRox_RoomType.SelectedItem.ToString(), out Room_Information.Room_Type room_Type);
             Enum.TryParse(ComboBox_RoomStatus.SelectedItem.ToString(), out Room_Information.Room_Status room_Status);
             return new Room_Information(roomNumber, room_Type, room_Status);
@@ -174,10 +185,6 @@ namespace GUI.Dashboard
                     case "Btn_Delete":
                         MessageBox.Show(Logic_Rooms.CheckLogicDeleteRow(GetUIData()));
                         LoadRooms();
-                        break;
-
-                    case "Btn_Search":
-
                         break;
                 }
             }
@@ -213,9 +220,9 @@ namespace GUI.Dashboard
         }
         private void Btn_Search_Click(object sender, EventArgs e)
         {
-            isSearching = true;
             UpdateUIState(false);
             ActivateButton(sender);
+            isSearching = true;
             Btn_Reload.Enabled = false;
             Btn_Add.Enabled = false;
             Btn_Edit.Enabled = false;
@@ -225,28 +232,45 @@ namespace GUI.Dashboard
         private void Btn_Confirm_Click(object sender, EventArgs e)
         {
             isSearching = false;
-            DefaultUIState();
             FunctionalButton(sender,e);
+            DefaultUIState();
             ActivateButton(sender);
+        }
+
+        private void Btn_Cancel_Click(object sender, EventArgs e)
+        {
+            isSearching = false;
+            DefaultUIState();
+            ActivateButton(sender);
+        }
+
+        private void SearchByStatus(string status)
+        {
+            Table_Room.DataSource = Logic_Rooms.CheckLogicSeachByStatus(status);
+            Table_Room.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+        }
+        private void SearchByType(string roomType)
+        {
+            Table_Room.DataSource = Logic_Rooms.CheckLogicSeachByRoomType(roomType);
+            Table_Room.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
         }
         private void ComboBox_RoomStatus_OnSelectedIndexChanged(object sender, EventArgs e)
         {
-            if (isSearching&&isClickRoomStatus)
+            if (isSearching && sender.GetType().Equals(typeof(ComboBox)))
             {
-                string status = ComboBox_RoomStatus.SelectedItem.ToString();
-                Table_Room.DataSource = Logic_Rooms.CheckLogicSeachByStatus(status);
-                Table_Room.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+                string roomStatus = ComboBox_RoomStatus.SelectedItem.ToString();
+                SearchByStatus(roomStatus);
             }
         }
 
         private void ComboRox_RoomType_OnSelectedIndexChanged(object sender, EventArgs e)
         {
-            if (isSearching&&isClickRoomType)
+            if (isSearching && sender.GetType().Equals(typeof(ComboBox)))
             {
                 string roomType = ComboRox_RoomType.SelectedItem.ToString();
-                Table_Room.DataSource = Logic_Rooms.CheckLogicSeachByRoomType(roomType);
-                Table_Room.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+                SearchByType(roomType);
             }
         }
+
     }
 }

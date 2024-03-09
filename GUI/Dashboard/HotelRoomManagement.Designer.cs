@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Table_Room = new System.Windows.Forms.DataGridView();
             this.Panel_Menu = new System.Windows.Forms.FlowLayoutPanel();
             this.Btn_Search = new GUI.CustomUIComponent.RoundButton();
@@ -48,6 +48,7 @@
             this.Txt_SearchBox = new CustomControls.RJControls.RoundTextBox();
             this.Txt_RoomNumber = new CustomControls.RJControls.RoundTextBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.Btn_Cancel = new GUI.CustomUIComponent.RoundButton();
             ((System.ComponentModel.ISupportInitialize)(this.Table_Room)).BeginInit();
             this.Panel_Menu.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -58,23 +59,23 @@
             // 
             this.Table_Room.BackgroundColor = System.Drawing.Color.White;
             this.Table_Room.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Table_Room.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Table_Room.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.Table_Room.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.Table_Room.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.Table_Room.DefaultCellStyle = dataGridViewCellStyle2;
             this.Table_Room.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Table_Room.Location = new System.Drawing.Point(0, 0);
             this.Table_Room.Margin = new System.Windows.Forms.Padding(0);
@@ -94,6 +95,7 @@
             this.Panel_Menu.Controls.Add(this.Btn_Edit);
             this.Panel_Menu.Controls.Add(this.Btn_Delete);
             this.Panel_Menu.Controls.Add(this.Btn_Confirm);
+            this.Panel_Menu.Controls.Add(this.Btn_Cancel);
             this.Panel_Menu.Dock = System.Windows.Forms.DockStyle.Right;
             this.Panel_Menu.Location = new System.Drawing.Point(1311, 0);
             this.Panel_Menu.Name = "Panel_Menu";
@@ -404,6 +406,30 @@
             this.panel2.Size = new System.Drawing.Size(1311, 513);
             this.panel2.TabIndex = 12;
             // 
+            // Btn_Cancel
+            // 
+            this.Btn_Cancel.BackColor = System.Drawing.Color.White;
+            this.Btn_Cancel.BackgroundColor = System.Drawing.Color.White;
+            this.Btn_Cancel.BorderColor = System.Drawing.Color.Black;
+            this.Btn_Cancel.BorderRadius = 20;
+            this.Btn_Cancel.BorderSize = 2;
+            this.Btn_Cancel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Btn_Cancel.FlatAppearance.BorderSize = 0;
+            this.Btn_Cancel.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGray;
+            this.Btn_Cancel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
+            this.Btn_Cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_Cancel.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_Cancel.ForeColor = System.Drawing.Color.Black;
+            this.Btn_Cancel.Location = new System.Drawing.Point(5, 305);
+            this.Btn_Cancel.Margin = new System.Windows.Forms.Padding(5);
+            this.Btn_Cancel.Name = "Btn_Cancel";
+            this.Btn_Cancel.Size = new System.Drawing.Size(170, 40);
+            this.Btn_Cancel.TabIndex = 6;
+            this.Btn_Cancel.Text = "CANCEL";
+            this.Btn_Cancel.TextColor = System.Drawing.Color.Black;
+            this.Btn_Cancel.UseVisualStyleBackColor = false;
+            this.Btn_Cancel.Click += new System.EventHandler(this.Btn_Cancel_Click);
+            // 
             // HotelRoomManagement
             // 
             this.BackColor = System.Drawing.Color.White;
@@ -443,5 +469,6 @@
         private System.Windows.Forms.Panel panel2;
         private CustomUIComponent.RoundButton Btn_Edit;
         private CustomUIComponent.CustomCombobox ComboRox_RoomType;
+        private CustomUIComponent.RoundButton Btn_Cancel;
     }
 }
