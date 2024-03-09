@@ -29,12 +29,22 @@ namespace DAL
             da.Fill(dt);
             return dt;
         }
-        public static void Nonquery(String sqlNon, SqlConnection conn)
+        public static int Nonquery(String sqlNon, SqlConnection conn)
         {
             SqlCommand comm = new SqlCommand(sqlNon, conn);
             conn.Open();
-            int ketqua = comm.ExecuteNonQuery();
-            conn.Close();
+            //try
+            //{
+                return comm.ExecuteNonQuery();
+            //}
+            //catch (SqlException)
+            //{
+            //    return 0;
+            //}
+            //finally
+            //{
+            //    conn.Close();
+            //}
         }
     }
 }

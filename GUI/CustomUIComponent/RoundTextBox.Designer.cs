@@ -55,7 +55,7 @@ namespace CustomControls.RJControls
             this.BackColor = System.Drawing.Color.DimGray;
             this.Controls.Add(this.textBox1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ForeColor = Color.White;
+            this.ForeColor = System.Drawing.Color.White;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "RoundTextBox";
             this.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);

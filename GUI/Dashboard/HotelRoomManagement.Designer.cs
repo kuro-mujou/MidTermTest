@@ -28,27 +28,28 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Table_Room = new System.Windows.Forms.DataGridView();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.Panel_Menu = new System.Windows.Forms.FlowLayoutPanel();
+            this.Btn_Search = new GUI.CustomUIComponent.RoundButton();
+            this.Btn_Reload = new GUI.CustomUIComponent.RoundButton();
+            this.Btn_Add = new GUI.CustomUIComponent.RoundButton();
+            this.Btn_Edit = new GUI.CustomUIComponent.RoundButton();
+            this.Btn_Delete = new GUI.CustomUIComponent.RoundButton();
+            this.Btn_Confirm = new GUI.CustomUIComponent.RoundButton();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.ComboRox_RoomType = new GUI.CustomUIComponent.CustomCombobox();
             this.ComboBox_RoomStatus = new GUI.CustomUIComponent.CustomCombobox();
             this.Txt_SearchBox = new CustomControls.RJControls.RoundTextBox();
             this.Txt_RoomNumber = new CustomControls.RJControls.RoundTextBox();
-            this.Txt_RoomType = new CustomControls.RJControls.RoundTextBox();
-            this.Btn_Search = new GUI.CustomUIComponent.RoundButton();
-            this.Btn_Reload = new GUI.CustomUIComponent.RoundButton();
-            this.Btn_Add = new GUI.CustomUIComponent.RoundButton();
-            this.Btn_Delete = new GUI.CustomUIComponent.RoundButton();
-            this.Confirm = new GUI.CustomUIComponent.RoundButton();
+            this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.Table_Room)).BeginInit();
-            this.flowLayoutPanel1.SuspendLayout();
+            this.Panel_Menu.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -57,23 +58,23 @@
             // 
             this.Table_Room.BackgroundColor = System.Drawing.Color.White;
             this.Table_Room.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Table_Room.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Table_Room.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.Table_Room.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.Table_Room.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.Table_Room.DefaultCellStyle = dataGridViewCellStyle10;
             this.Table_Room.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Table_Room.Location = new System.Drawing.Point(0, 0);
             this.Table_Room.Margin = new System.Windows.Forms.Padding(0);
@@ -82,20 +83,166 @@
             this.Table_Room.RowTemplate.Height = 24;
             this.Table_Room.Size = new System.Drawing.Size(1311, 513);
             this.Table_Room.TabIndex = 0;
-            this.Table_Room.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgv_CellFormatting);
+            this.Table_Room.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Table_Room_CellClick);
+            this.Table_Room.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.Table_Room_CellFormatting);
             // 
-            // flowLayoutPanel1
+            // Panel_Menu
             // 
-            this.flowLayoutPanel1.Controls.Add(this.Btn_Search);
-            this.flowLayoutPanel1.Controls.Add(this.Btn_Reload);
-            this.flowLayoutPanel1.Controls.Add(this.Btn_Add);
-            this.flowLayoutPanel1.Controls.Add(this.Btn_Delete);
-            this.flowLayoutPanel1.Controls.Add(this.Confirm);
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(1311, 0);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(180, 610);
-            this.flowLayoutPanel1.TabIndex = 1;
+            this.Panel_Menu.Controls.Add(this.Btn_Reload);
+            this.Panel_Menu.Controls.Add(this.Btn_Search);
+            this.Panel_Menu.Controls.Add(this.Btn_Add);
+            this.Panel_Menu.Controls.Add(this.Btn_Edit);
+            this.Panel_Menu.Controls.Add(this.Btn_Delete);
+            this.Panel_Menu.Controls.Add(this.Btn_Confirm);
+            this.Panel_Menu.Dock = System.Windows.Forms.DockStyle.Right;
+            this.Panel_Menu.Location = new System.Drawing.Point(1311, 0);
+            this.Panel_Menu.Name = "Panel_Menu";
+            this.Panel_Menu.Size = new System.Drawing.Size(180, 610);
+            this.Panel_Menu.TabIndex = 1;
+            // 
+            // Btn_Search
+            // 
+            this.Btn_Search.BackColor = System.Drawing.Color.White;
+            this.Btn_Search.BackgroundColor = System.Drawing.Color.White;
+            this.Btn_Search.BorderColor = System.Drawing.Color.Black;
+            this.Btn_Search.BorderRadius = 20;
+            this.Btn_Search.BorderSize = 2;
+            this.Btn_Search.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Btn_Search.FlatAppearance.BorderSize = 0;
+            this.Btn_Search.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGray;
+            this.Btn_Search.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
+            this.Btn_Search.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_Search.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_Search.ForeColor = System.Drawing.Color.Black;
+            this.Btn_Search.Location = new System.Drawing.Point(5, 55);
+            this.Btn_Search.Margin = new System.Windows.Forms.Padding(5);
+            this.Btn_Search.Name = "Btn_Search";
+            this.Btn_Search.Size = new System.Drawing.Size(170, 40);
+            this.Btn_Search.TabIndex = 0;
+            this.Btn_Search.Text = "SEARCH";
+            this.Btn_Search.TextColor = System.Drawing.Color.Black;
+            this.Btn_Search.UseVisualStyleBackColor = false;
+            this.Btn_Search.Click += new System.EventHandler(this.Btn_Search_Click);
+            // 
+            // Btn_Reload
+            // 
+            this.Btn_Reload.BackColor = System.Drawing.Color.White;
+            this.Btn_Reload.BackgroundColor = System.Drawing.Color.White;
+            this.Btn_Reload.BorderColor = System.Drawing.Color.Black;
+            this.Btn_Reload.BorderRadius = 20;
+            this.Btn_Reload.BorderSize = 2;
+            this.Btn_Reload.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Btn_Reload.FlatAppearance.BorderSize = 0;
+            this.Btn_Reload.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGray;
+            this.Btn_Reload.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
+            this.Btn_Reload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_Reload.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_Reload.ForeColor = System.Drawing.Color.Black;
+            this.Btn_Reload.Location = new System.Drawing.Point(5, 5);
+            this.Btn_Reload.Margin = new System.Windows.Forms.Padding(5);
+            this.Btn_Reload.Name = "Btn_Reload";
+            this.Btn_Reload.Size = new System.Drawing.Size(170, 40);
+            this.Btn_Reload.TabIndex = 1;
+            this.Btn_Reload.Text = "RELOAD";
+            this.Btn_Reload.TextColor = System.Drawing.Color.Black;
+            this.Btn_Reload.UseVisualStyleBackColor = false;
+            this.Btn_Reload.Click += new System.EventHandler(this.HotelRoomManagement_Load);
+            // 
+            // Btn_Add
+            // 
+            this.Btn_Add.BackColor = System.Drawing.Color.White;
+            this.Btn_Add.BackgroundColor = System.Drawing.Color.White;
+            this.Btn_Add.BorderColor = System.Drawing.Color.Black;
+            this.Btn_Add.BorderRadius = 20;
+            this.Btn_Add.BorderSize = 2;
+            this.Btn_Add.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Btn_Add.FlatAppearance.BorderSize = 0;
+            this.Btn_Add.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGray;
+            this.Btn_Add.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
+            this.Btn_Add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_Add.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_Add.ForeColor = System.Drawing.Color.Black;
+            this.Btn_Add.Location = new System.Drawing.Point(5, 105);
+            this.Btn_Add.Margin = new System.Windows.Forms.Padding(5);
+            this.Btn_Add.Name = "Btn_Add";
+            this.Btn_Add.Size = new System.Drawing.Size(170, 40);
+            this.Btn_Add.TabIndex = 2;
+            this.Btn_Add.Text = "ADD";
+            this.Btn_Add.TextColor = System.Drawing.Color.Black;
+            this.Btn_Add.UseVisualStyleBackColor = false;
+            this.Btn_Add.Click += new System.EventHandler(this.Btn_Add_Click);
+            // 
+            // Btn_Edit
+            // 
+            this.Btn_Edit.BackColor = System.Drawing.Color.White;
+            this.Btn_Edit.BackgroundColor = System.Drawing.Color.White;
+            this.Btn_Edit.BorderColor = System.Drawing.Color.Black;
+            this.Btn_Edit.BorderRadius = 20;
+            this.Btn_Edit.BorderSize = 2;
+            this.Btn_Edit.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Btn_Edit.FlatAppearance.BorderSize = 0;
+            this.Btn_Edit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGray;
+            this.Btn_Edit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
+            this.Btn_Edit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_Edit.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_Edit.ForeColor = System.Drawing.Color.Black;
+            this.Btn_Edit.Location = new System.Drawing.Point(5, 155);
+            this.Btn_Edit.Margin = new System.Windows.Forms.Padding(5);
+            this.Btn_Edit.Name = "Btn_Edit";
+            this.Btn_Edit.Size = new System.Drawing.Size(170, 40);
+            this.Btn_Edit.TabIndex = 5;
+            this.Btn_Edit.Text = "EDIT";
+            this.Btn_Edit.TextColor = System.Drawing.Color.Black;
+            this.Btn_Edit.UseVisualStyleBackColor = false;
+            this.Btn_Edit.Click += new System.EventHandler(this.Btn_Edit_Click);
+            // 
+            // Btn_Delete
+            // 
+            this.Btn_Delete.BackColor = System.Drawing.Color.White;
+            this.Btn_Delete.BackgroundColor = System.Drawing.Color.White;
+            this.Btn_Delete.BorderColor = System.Drawing.Color.Black;
+            this.Btn_Delete.BorderRadius = 20;
+            this.Btn_Delete.BorderSize = 2;
+            this.Btn_Delete.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Btn_Delete.FlatAppearance.BorderSize = 0;
+            this.Btn_Delete.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGray;
+            this.Btn_Delete.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
+            this.Btn_Delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_Delete.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_Delete.ForeColor = System.Drawing.Color.Black;
+            this.Btn_Delete.Location = new System.Drawing.Point(5, 205);
+            this.Btn_Delete.Margin = new System.Windows.Forms.Padding(5);
+            this.Btn_Delete.Name = "Btn_Delete";
+            this.Btn_Delete.Size = new System.Drawing.Size(170, 40);
+            this.Btn_Delete.TabIndex = 3;
+            this.Btn_Delete.Text = "DELETE";
+            this.Btn_Delete.TextColor = System.Drawing.Color.Black;
+            this.Btn_Delete.UseVisualStyleBackColor = false;
+            this.Btn_Delete.Click += new System.EventHandler(this.Btn_Delete_Click);
+            // 
+            // Btn_Confirm
+            // 
+            this.Btn_Confirm.BackColor = System.Drawing.Color.White;
+            this.Btn_Confirm.BackgroundColor = System.Drawing.Color.White;
+            this.Btn_Confirm.BorderColor = System.Drawing.Color.Black;
+            this.Btn_Confirm.BorderRadius = 20;
+            this.Btn_Confirm.BorderSize = 2;
+            this.Btn_Confirm.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Btn_Confirm.FlatAppearance.BorderSize = 0;
+            this.Btn_Confirm.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGray;
+            this.Btn_Confirm.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
+            this.Btn_Confirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_Confirm.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_Confirm.ForeColor = System.Drawing.Color.Black;
+            this.Btn_Confirm.Location = new System.Drawing.Point(5, 255);
+            this.Btn_Confirm.Margin = new System.Windows.Forms.Padding(5);
+            this.Btn_Confirm.Name = "Btn_Confirm";
+            this.Btn_Confirm.Size = new System.Drawing.Size(170, 40);
+            this.Btn_Confirm.TabIndex = 4;
+            this.Btn_Confirm.Text = "CONFIRM";
+            this.Btn_Confirm.TextColor = System.Drawing.Color.Black;
+            this.Btn_Confirm.UseVisualStyleBackColor = false;
+            this.Btn_Confirm.Click += new System.EventHandler(this.Btn_Confirm_Click);
             // 
             // label1
             // 
@@ -139,27 +286,43 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.ComboRox_RoomType);
             this.panel1.Controls.Add(this.ComboBox_RoomStatus);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.Txt_SearchBox);
             this.panel1.Controls.Add(this.Txt_RoomNumber);
-            this.panel1.Controls.Add(this.Txt_RoomType);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1311, 97);
             this.panel1.TabIndex = 11;
             // 
-            // panel2
+            // ComboRox_RoomType
             // 
-            this.panel2.Controls.Add(this.Table_Room);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 97);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1311, 513);
-            this.panel2.TabIndex = 12;
+            this.ComboRox_RoomType.BackColor = System.Drawing.Color.DimGray;
+            this.ComboRox_RoomType.BorderColor = System.Drawing.Color.Gray;
+            this.ComboRox_RoomType.BorderSize = 2;
+            this.ComboRox_RoomType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.ComboRox_RoomType.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.ComboRox_RoomType.ForeColor = System.Drawing.Color.White;
+            this.ComboRox_RoomType.IconColor = System.Drawing.Color.White;
+            this.ComboRox_RoomType.Items.AddRange(new object[] {
+            "Standard_Room1",
+            "Standard_Room2",
+            "Deluxe_Room",
+            "Executive_Room"});
+            this.ComboRox_RoomType.ListBackColor = System.Drawing.Color.LightGray;
+            this.ComboRox_RoomType.ListTextColor = System.Drawing.Color.Black;
+            this.ComboRox_RoomType.Location = new System.Drawing.Point(121, 49);
+            this.ComboRox_RoomType.MinimumSize = new System.Drawing.Size(200, 30);
+            this.ComboRox_RoomType.Name = "ComboRox_RoomType";
+            this.ComboRox_RoomType.Padding = new System.Windows.Forms.Padding(2);
+            this.ComboRox_RoomType.Size = new System.Drawing.Size(250, 36);
+            this.ComboRox_RoomType.TabIndex = 11;
+            this.ComboRox_RoomType.Texts = "";
+            this.ComboRox_RoomType.OnSelectedIndexChanged += new System.EventHandler(this.ComboRox_RoomType_OnSelectedIndexChanged);
             // 
             // ComboBox_RoomStatus
             // 
@@ -183,6 +346,7 @@
             this.ComboBox_RoomStatus.Size = new System.Drawing.Size(222, 36);
             this.ComboBox_RoomStatus.TabIndex = 10;
             this.ComboBox_RoomStatus.Texts = "";
+            this.ComboBox_RoomStatus.OnSelectedIndexChanged += new System.EventHandler(this.ComboBox_RoomStatus_OnSelectedIndexChanged);
             // 
             // Txt_SearchBox
             // 
@@ -202,6 +366,7 @@
             this.Txt_SearchBox.PasswordChar = false;
             this.Txt_SearchBox.PlaceholderColor = System.Drawing.Color.LightGray;
             this.Txt_SearchBox.PlaceholderText = "Search here";
+            this.Txt_SearchBox.ReadOnly = false;
             this.Txt_SearchBox.Size = new System.Drawing.Size(351, 35);
             this.Txt_SearchBox.TabIndex = 8;
             this.Txt_SearchBox.Texts = "";
@@ -224,148 +389,20 @@
             this.Txt_RoomNumber.PasswordChar = false;
             this.Txt_RoomNumber.PlaceholderColor = System.Drawing.Color.LightGray;
             this.Txt_RoomNumber.PlaceholderText = "";
+            this.Txt_RoomNumber.ReadOnly = false;
             this.Txt_RoomNumber.Size = new System.Drawing.Size(250, 35);
             this.Txt_RoomNumber.TabIndex = 5;
             this.Txt_RoomNumber.Texts = "";
             this.Txt_RoomNumber.UnderlinedStyle = false;
             // 
-            // Txt_RoomType
+            // panel2
             // 
-            this.Txt_RoomType.BackColor = System.Drawing.Color.DimGray;
-            this.Txt_RoomType.BorderColor = System.Drawing.Color.Gray;
-            this.Txt_RoomType.BorderFocusColor = System.Drawing.Color.LightGray;
-            this.Txt_RoomType.BorderRadius = 0;
-            this.Txt_RoomType.BorderSize = 2;
-            this.Txt_RoomType.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Txt_RoomType.ForeColor = System.Drawing.Color.White;
-            this.Txt_RoomType.Location = new System.Drawing.Point(121, 50);
-            this.Txt_RoomType.Margin = new System.Windows.Forms.Padding(4);
-            this.Txt_RoomType.Multiline = false;
-            this.Txt_RoomType.Name = "Txt_RoomType";
-            this.Txt_RoomType.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.Txt_RoomType.PasswordChar = false;
-            this.Txt_RoomType.PlaceholderColor = System.Drawing.Color.LightGray;
-            this.Txt_RoomType.PlaceholderText = "";
-            this.Txt_RoomType.Size = new System.Drawing.Size(250, 35);
-            this.Txt_RoomType.TabIndex = 6;
-            this.Txt_RoomType.Texts = "";
-            this.Txt_RoomType.UnderlinedStyle = false;
-            // 
-            // Btn_Search
-            // 
-            this.Btn_Search.BackColor = System.Drawing.Color.White;
-            this.Btn_Search.BackgroundColor = System.Drawing.Color.White;
-            this.Btn_Search.BorderColor = System.Drawing.Color.Black;
-            this.Btn_Search.BorderRadius = 20;
-            this.Btn_Search.BorderSize = 2;
-            this.Btn_Search.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Btn_Search.FlatAppearance.BorderSize = 0;
-            this.Btn_Search.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGray;
-            this.Btn_Search.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
-            this.Btn_Search.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_Search.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_Search.ForeColor = System.Drawing.Color.Black;
-            this.Btn_Search.Location = new System.Drawing.Point(5, 5);
-            this.Btn_Search.Margin = new System.Windows.Forms.Padding(5);
-            this.Btn_Search.Name = "Btn_Search";
-            this.Btn_Search.Size = new System.Drawing.Size(170, 40);
-            this.Btn_Search.TabIndex = 0;
-            this.Btn_Search.Text = "SEARCH";
-            this.Btn_Search.TextColor = System.Drawing.Color.Black;
-            this.Btn_Search.UseVisualStyleBackColor = false;
-            // 
-            // Btn_Reload
-            // 
-            this.Btn_Reload.BackColor = System.Drawing.Color.White;
-            this.Btn_Reload.BackgroundColor = System.Drawing.Color.White;
-            this.Btn_Reload.BorderColor = System.Drawing.Color.Black;
-            this.Btn_Reload.BorderRadius = 20;
-            this.Btn_Reload.BorderSize = 2;
-            this.Btn_Reload.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Btn_Reload.FlatAppearance.BorderSize = 0;
-            this.Btn_Reload.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGray;
-            this.Btn_Reload.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
-            this.Btn_Reload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_Reload.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_Reload.ForeColor = System.Drawing.Color.Black;
-            this.Btn_Reload.Location = new System.Drawing.Point(5, 55);
-            this.Btn_Reload.Margin = new System.Windows.Forms.Padding(5);
-            this.Btn_Reload.Name = "Btn_Reload";
-            this.Btn_Reload.Size = new System.Drawing.Size(170, 40);
-            this.Btn_Reload.TabIndex = 1;
-            this.Btn_Reload.Text = "RELOAD";
-            this.Btn_Reload.TextColor = System.Drawing.Color.Black;
-            this.Btn_Reload.UseVisualStyleBackColor = false;
-            this.Btn_Reload.Click += new System.EventHandler(this.HotelRoomManagement_Load);
-            // 
-            // Btn_Add
-            // 
-            this.Btn_Add.BackColor = System.Drawing.Color.White;
-            this.Btn_Add.BackgroundColor = System.Drawing.Color.White;
-            this.Btn_Add.BorderColor = System.Drawing.Color.Black;
-            this.Btn_Add.BorderRadius = 20;
-            this.Btn_Add.BorderSize = 2;
-            this.Btn_Add.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Btn_Add.FlatAppearance.BorderSize = 0;
-            this.Btn_Add.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGray;
-            this.Btn_Add.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
-            this.Btn_Add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_Add.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_Add.ForeColor = System.Drawing.Color.Black;
-            this.Btn_Add.Location = new System.Drawing.Point(5, 105);
-            this.Btn_Add.Margin = new System.Windows.Forms.Padding(5);
-            this.Btn_Add.Name = "Btn_Add";
-            this.Btn_Add.Size = new System.Drawing.Size(170, 40);
-            this.Btn_Add.TabIndex = 2;
-            this.Btn_Add.Text = "ADD";
-            this.Btn_Add.TextColor = System.Drawing.Color.Black;
-            this.Btn_Add.UseVisualStyleBackColor = false;
-            // 
-            // Btn_Delete
-            // 
-            this.Btn_Delete.BackColor = System.Drawing.Color.White;
-            this.Btn_Delete.BackgroundColor = System.Drawing.Color.White;
-            this.Btn_Delete.BorderColor = System.Drawing.Color.Black;
-            this.Btn_Delete.BorderRadius = 20;
-            this.Btn_Delete.BorderSize = 2;
-            this.Btn_Delete.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Btn_Delete.FlatAppearance.BorderSize = 0;
-            this.Btn_Delete.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGray;
-            this.Btn_Delete.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
-            this.Btn_Delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_Delete.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_Delete.ForeColor = System.Drawing.Color.Black;
-            this.Btn_Delete.Location = new System.Drawing.Point(5, 155);
-            this.Btn_Delete.Margin = new System.Windows.Forms.Padding(5);
-            this.Btn_Delete.Name = "Btn_Delete";
-            this.Btn_Delete.Size = new System.Drawing.Size(170, 40);
-            this.Btn_Delete.TabIndex = 3;
-            this.Btn_Delete.Text = "DELETE";
-            this.Btn_Delete.TextColor = System.Drawing.Color.Black;
-            this.Btn_Delete.UseVisualStyleBackColor = false;
-            // 
-            // Confirm
-            // 
-            this.Confirm.BackColor = System.Drawing.Color.White;
-            this.Confirm.BackgroundColor = System.Drawing.Color.White;
-            this.Confirm.BorderColor = System.Drawing.Color.Black;
-            this.Confirm.BorderRadius = 20;
-            this.Confirm.BorderSize = 2;
-            this.Confirm.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Confirm.FlatAppearance.BorderSize = 0;
-            this.Confirm.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGray;
-            this.Confirm.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
-            this.Confirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Confirm.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Confirm.ForeColor = System.Drawing.Color.Black;
-            this.Confirm.Location = new System.Drawing.Point(5, 205);
-            this.Confirm.Margin = new System.Windows.Forms.Padding(5);
-            this.Confirm.Name = "Confirm";
-            this.Confirm.Size = new System.Drawing.Size(170, 40);
-            this.Confirm.TabIndex = 4;
-            this.Confirm.Text = "CONFIRM";
-            this.Confirm.TextColor = System.Drawing.Color.Black;
-            this.Confirm.UseVisualStyleBackColor = false;
+            this.panel2.Controls.Add(this.Table_Room);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(0, 97);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1311, 513);
+            this.panel2.TabIndex = 12;
             // 
             // HotelRoomManagement
             // 
@@ -373,12 +410,12 @@
             this.ClientSize = new System.Drawing.Size(1491, 610);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.flowLayoutPanel1);
+            this.Controls.Add(this.Panel_Menu);
             this.Name = "HotelRoomManagement";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Load += new System.EventHandler(this.HotelRoomManagement_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Table_Room)).EndInit();
-            this.flowLayoutPanel1.ResumeLayout(false);
+            this.Panel_Menu.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -389,13 +426,12 @@
         #endregion
 
         private System.Windows.Forms.DataGridView Table_Room;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.FlowLayoutPanel Panel_Menu;
         private CustomUIComponent.RoundButton Btn_Search;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private CustomControls.RJControls.RoundTextBox Txt_RoomNumber;
-        private CustomControls.RJControls.RoundTextBox Txt_RoomType;
         private CustomControls.RJControls.RoundTextBox Txt_SearchBox;
         private System.Windows.Forms.Label label4;
         private CustomUIComponent.CustomCombobox ComboBox_RoomStatus;
@@ -403,7 +439,9 @@
         private CustomUIComponent.RoundButton Btn_Reload;
         private CustomUIComponent.RoundButton Btn_Add;
         private CustomUIComponent.RoundButton Btn_Delete;
-        private CustomUIComponent.RoundButton Confirm;
+        private CustomUIComponent.RoundButton Btn_Confirm;
         private System.Windows.Forms.Panel panel2;
+        private CustomUIComponent.RoundButton Btn_Edit;
+        private CustomUIComponent.CustomCombobox ComboRox_RoomType;
     }
 }
