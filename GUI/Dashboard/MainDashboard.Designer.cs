@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainDashboard));
             this.Panel_Header = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Panel_Content = new System.Windows.Forms.Panel();
             this.Panel_Menu = new System.Windows.Forms.FlowLayoutPanel();
@@ -37,7 +38,6 @@
             this.roundButton2 = new GUI.CustomUIComponent.RoundButton();
             this.roundButton3 = new GUI.CustomUIComponent.RoundButton();
             this.roundButton4 = new GUI.CustomUIComponent.RoundButton();
-            this.label1 = new System.Windows.Forms.Label();
             this.Panel_Header.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.Panel_Menu.SuspendLayout();
@@ -53,6 +53,16 @@
             this.Panel_Header.Name = "Panel_Header";
             this.Panel_Header.Size = new System.Drawing.Size(1493, 70);
             this.Panel_Header.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Calibri", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(848, 15);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(309, 40);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "AZURE HAVEN HOTEL";
             // 
             // pictureBox1
             // 
@@ -177,20 +187,10 @@
             this.roundButton4.Name = "roundButton4";
             this.roundButton4.Size = new System.Drawing.Size(240, 50);
             this.roundButton4.TabIndex = 3;
-            this.roundButton4.Text = "roundButton4";
+            this.roundButton4.Text = "Room Rental";
             this.roundButton4.TextColor = System.Drawing.Color.Black;
             this.roundButton4.UseVisualStyleBackColor = false;
             this.roundButton4.Click += new System.EventHandler(this.RoundButton4_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Calibri", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(848, 15);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(319, 41);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "AZURE HAVEN HOTEL";
             // 
             // MainDashboard
             // 

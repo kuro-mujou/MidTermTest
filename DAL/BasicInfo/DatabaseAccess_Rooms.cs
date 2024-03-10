@@ -1,7 +1,10 @@
-﻿using DTO.BasicInfo.HotelRoom;
+﻿using DTO.BasicInfo.Customer;
+using DTO.BasicInfo;
+using DTO.BasicInfo.HotelRoom;
 using System;
 using System.Data;
 using System.Data.SqlClient;
+using static DTO.BasicInfo.HotelRoom.Room_Information;
 
 namespace DAL.BasicInfo
 {
@@ -48,10 +51,29 @@ namespace DAL.BasicInfo
             return DatabaseHelper.LoadDataTable(sqlSearchStatus, conn);
         }
 
-        public static object SearchByNumber(string roomNumber)
+        public static object SearchByNumber(int roomNumber)
         {
             string sqlSearchStatus = "select * from Room_Information where Number = '" + roomNumber + "'";
             return DatabaseHelper.LoadDataTable(sqlSearchStatus, conn);
+        }
+
+        public static Room_Information GetRoom_Information(int number)
+        {
+            string sqlSearch = "select * from Room_Information where Number = '" + number + "'";
+            SqlDataReader reader = DatabaseHelper.GetOneRow(sqlSearch, conn);
+            if (reader.Read())
+            {
+                int Number = reader.GetInt32(0);
+                string RoomType = reader.GetString(1);
+                string Status = reader.GetString(2);
+                Room_Information.Room_Type room_Type = (Room_Information.Room_Type)Enum.Parse(typeof(Room_Information.Room_Type), RoomType);
+                Room_Information.Room_Status room_Status = (Room_Information.Room_Status)Enum.Parse(typeof(Room_Information.Room_Status), Status);
+                return new Room_Information(Number, room_Type, room_Status);
+            }
+            else
+            {
+                return null;
+            }
         }
     }
 }

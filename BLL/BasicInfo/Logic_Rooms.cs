@@ -13,7 +13,7 @@ namespace BLL.BasicInfo
         {
             return DatabaseAccess_Rooms.SearchByStatus(status);
         }
-        public object CheckLogicSeachByRoomNumber(string roomNumber)
+        public object CheckLogicSeachByRoomNumber(int roomNumber)
         {
             return DatabaseAccess_Rooms.SearchByNumber(roomNumber);
         }

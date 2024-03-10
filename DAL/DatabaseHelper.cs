@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DTO.BasicInfo.HotelRoom;
+using System;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
@@ -40,6 +41,24 @@ namespace DAL
             catch (SqlException)
             {
                 return 0;
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+        public static SqlDataReader GetOneRow(string sqlSearch, SqlConnection conn)
+        {
+            SqlCommand comm = new SqlCommand(sqlSearch, conn);
+            conn.Open();
+            try
+            {
+                return comm.ExecuteReader();
+            }
+            catch (SqlException)
+            {
+                return null;
             }
             finally
             {

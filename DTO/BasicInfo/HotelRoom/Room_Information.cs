@@ -18,11 +18,11 @@ namespace DTO.BasicInfo.HotelRoom
 
         public enum Room_Type
         {
-            Empty,
-            Standard_Room1,
-            Standard_Room2,
-            Deluxe_Room,
-            Executive_Room
+            Empty = 0,
+            Standard_Room1 = 1000000,
+            Standard_Room2 = 2000000,
+            Deluxe_Room = 3000000,
+            Executive_Room = 4000000
         }
         //Standard Room:
         //A basic room with essential amenities suitable for individual travelers or couples.

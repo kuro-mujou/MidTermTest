@@ -28,6 +28,7 @@ namespace GUI.Dashboard
             Txt_RoomNumber.ReadOnly = true;
             ComboBox_RoomType.Enabled = false;
             ComboBox_RoomStatus.Enabled = false;
+
             Btn_Confirm.Visible = false;
             Btn_Cancel.Visible = false;
             Btn_Search.Enabled = true;
@@ -263,7 +264,7 @@ namespace GUI.Dashboard
             Table_Room.DataSource = Logic_Rooms.CheckLogicSeachByRoomType(roomType);
             Table_Room.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
         }
-        private void SearchByNumber(string roomNumber)
+        private void SearchByNumber(int roomNumber)
         {
             Table_Room.DataSource = Logic_Rooms.CheckLogicSeachByRoomNumber(roomNumber);
             Table_Room.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
@@ -292,7 +293,7 @@ namespace GUI.Dashboard
             {
                 try
                 {
-                    string roomNumber = Txt_RoomNumber.Texts;
+                    int roomNumber = int.Parse(Txt_RoomNumber.Texts);
                     SearchByNumber(roomNumber);
                 }
                 catch (Exception)
