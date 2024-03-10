@@ -27,7 +27,8 @@ namespace GUI.Dashboard
         private void CustomerManagement_Load(object sender, EventArgs e)
         {
             LoadCustomers();
-            DefaultUIState();
+            if(!isSearching)
+                DefaultUIState();
         }
         private void DefaultUIState()
         {
@@ -54,6 +55,7 @@ namespace GUI.Dashboard
             Txt_Email.ReadOnly = true;
             Txt_Phone.ReadOnly = true;
             Txt_Address.ReadOnly = true;
+            ComboBox_Gender.Enabled = false;
 
             Txt_ID.Texts = string.Empty;
             Txt_Identity.Texts = string.Empty;
@@ -61,6 +63,7 @@ namespace GUI.Dashboard
             Txt_Email.Texts = string.Empty;
             Txt_Phone.Texts = string.Empty;
             Txt_Address.Texts = string.Empty;
+            ComboBox_Gender.SelectedItem = null;
         }
         private void LoadCustomers()
         {
@@ -83,13 +86,13 @@ namespace GUI.Dashboard
                 {
                     DataGridViewRow selectedRow = Table_Customer.Rows[e.RowIndex];
 
-                    Txt_ID.Texts = selectedRow.Cells["Customer_ID"].Value.ToString(); ;
-                    Txt_Identity.Texts = selectedRow.Cells["Customer_Identity"].Value.ToString(); ;
-                    Txt_Name.Texts = selectedRow.Cells["Customer_Name"].Value.ToString(); ;
-                    Txt_Email.Texts = selectedRow.Cells["Customer_Email"].Value.ToString(); ;
-                    Txt_Phone.Texts = selectedRow.Cells["Customer_Phone"].Value.ToString(); ;
-                    Txt_Address.Texts = selectedRow.Cells["Customer_Address"].Value.ToString(); ;
-
+                    Txt_ID.Texts = selectedRow.Cells["Customer_ID"].Value.ToString();
+                    Txt_Identity.Texts = selectedRow.Cells["Customer_Identity"].Value.ToString();
+                    Txt_Name.Texts = selectedRow.Cells["Customer_Name"].Value.ToString();
+                    Txt_Email.Texts = selectedRow.Cells["Customer_Email"].Value.ToString();
+                    Txt_Phone.Texts = selectedRow.Cells["Customer_Phone"].Value.ToString();
+                    Txt_Address.Texts = selectedRow.Cells["Customer_Address"].Value.ToString();
+                    ComboBox_Gender.SelectedItem = selectedRow.Cells["Gender"].Value.ToString();
                 }
                 else
                 {
@@ -118,6 +121,10 @@ namespace GUI.Dashboard
 
                         case "Customer_Address":
                             SearchByCustomer_Address(selectedRow.Cells["Customer_Address"].Value.ToString());
+                            break;
+
+                        case "Gender":
+                            SearchByCustomer_Gender(selectedRow.Cells["Gender"].Value.ToString());
                             break;
                     }
                 }
@@ -159,7 +166,8 @@ namespace GUI.Dashboard
                 string Email = Txt_Email.Texts;
                 string Phone = Txt_Phone.Texts;
                 Address address = Address.StringToAddress(Txt_Address.Texts);
-                return new Customer_Information(ID, Identity, Name, Email, Phone, address);
+                string gender = ComboBox_Gender.SelectedItem.ToString();
+                return new Customer_Information(ID, Identity, Name, gender, Email, Phone, address);
             }
             catch (Exception)
             {
@@ -176,7 +184,8 @@ namespace GUI.Dashboard
                 string Email = Txt_Email.Texts;
                 string Phone = Txt_Phone.Texts;
                 Address address = Address.StringToAddress(Txt_City.Texts + "," + Txt_Country.Texts);
-                return new Customer_Information(Identity, Name, Email, Phone, address);
+                string gender = ComboBox_Gender.SelectedItem.ToString();
+                return new Customer_Information(Identity, Name, gender, Email, Phone, address);
             }
             catch (Exception)
             {
@@ -240,6 +249,7 @@ namespace GUI.Dashboard
             Txt_Name.ReadOnly = false;
             Txt_Email.ReadOnly = false;
             Txt_Phone.ReadOnly = false;
+            ComboBox_Gender.Enabled = true;
 
             ActivateButton(sender);
             Btn_Search.Enabled = false;
@@ -268,6 +278,7 @@ namespace GUI.Dashboard
             Txt_Name.ReadOnly = false;
             Txt_Email.ReadOnly = false;
             Txt_Phone.ReadOnly = false;
+            ComboBox_Gender.Enabled = true;
 
             ActivateButton(sender);
             Btn_Search.Enabled = false;
@@ -295,6 +306,7 @@ namespace GUI.Dashboard
             Txt_Email.ReadOnly = true;
             Txt_Phone.ReadOnly = true;
             Txt_Address.ReadOnly = true;
+            ComboBox_Gender.Enabled = true;
 
             ActivateButton(sender);
             Btn_Search.Enabled = false;
@@ -321,6 +333,7 @@ namespace GUI.Dashboard
             Txt_Email.ReadOnly = false;
             Txt_Phone.ReadOnly = false;
             Txt_Address.ReadOnly = false;
+            ComboBox_Gender.Enabled = true;
 
             ActivateButton(sender);
             isSearching = true;
@@ -349,6 +362,7 @@ namespace GUI.Dashboard
             Txt_Email.Texts = string.Empty;
             Txt_Phone.Texts = string.Empty;
             Txt_Address.Texts = string.Empty;
+            ComboBox_Gender.SelectedItem = null;
             Txt_City.Texts = string.Empty;
             Txt_Country.Texts = string.Empty;
         }
@@ -388,7 +402,19 @@ namespace GUI.Dashboard
             Table_Customer.DataSource = Logic_Customers.CheckLogicSearchByCustomer_Address(Address);
             Table_Customer.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
         }
-
+        private void SearchByCustomer_Gender(string Gender)
+        {
+            Table_Customer.DataSource = Logic_Customers.CheckLogicSearchByCustomer_Gender(Gender);
+            Table_Customer.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+        }
+        private void ComboBox_Gender_OnSelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (isSearching && sender.GetType().Equals(typeof(ComboBox)))
+            {
+                string gender = ComboBox_Gender.SelectedItem.ToString();
+                SearchByCustomer_Gender(gender);
+            }
+        }
         private void Txt_ID_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (isSearching && e.KeyChar == (char)Keys.Enter)

@@ -261,7 +261,7 @@ namespace GUI.CustomUIComponent
             get { return cmbList.Items; }
         }
 
-        [Category("RJ Code - Data")]
+        [Category("Code - Data")]
         [AttributeProvider(typeof(IListSource))]
         [DefaultValue(null)]
         public object DataSource
@@ -270,7 +270,7 @@ namespace GUI.CustomUIComponent
             set { cmbList.DataSource = value; }
         }
 
-        [Category("RJ Code - Data")]
+        [Category("Code - Data")]
         [Browsable(true)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Content)]
         [Editor("System.Windows.Forms.Design.ListControlStringCollectionEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(UITypeEditor))]
@@ -282,7 +282,7 @@ namespace GUI.CustomUIComponent
             set { cmbList.AutoCompleteCustomSource = value; }
         }
 
-        [Category("RJ Code - Data")]
+        [Category("Code - Data")]
         [Browsable(true)]
         [DefaultValue(AutoCompleteSource.None)]
         [EditorBrowsable(EditorBrowsableState.Always)]
@@ -292,7 +292,7 @@ namespace GUI.CustomUIComponent
             set { cmbList.AutoCompleteSource = value; }
         }
 
-        [Category("RJ Code - Data")]
+        [Category("Code - Data")]
         [Browsable(true)]
         [DefaultValue(AutoCompleteMode.None)]
         [EditorBrowsable(EditorBrowsableState.Always)]
@@ -355,6 +355,18 @@ namespace GUI.CustomUIComponent
         {
             base.OnResize(e);
             AdjustComboBoxDimensions();
+        }
+
+        private void InitializeComponent()
+        {
+            this.SuspendLayout();
+            // 
+            // CustomCombobox
+            // 
+            this.Name = "CustomCombobox";
+            this.Size = new System.Drawing.Size(42, 150);
+            this.ResumeLayout(false);
+
         }
     }
 }

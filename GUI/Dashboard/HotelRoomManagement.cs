@@ -26,7 +26,7 @@ namespace GUI.Dashboard
         private void DefaultUIState()
         {
             Txt_RoomNumber.ReadOnly = true;
-            ComboRox_RoomType.Enabled = false;
+            ComboBox_RoomType.Enabled = false;
             ComboBox_RoomStatus.Enabled = false;
             Btn_Confirm.Visible = false;
             Btn_Cancel.Visible = false;
@@ -37,19 +37,19 @@ namespace GUI.Dashboard
             Btn_Delete.Enabled = true;
 
             Txt_RoomNumber.Texts = string.Empty;
-            ComboRox_RoomType.SelectedItem = null;
+            ComboBox_RoomType.SelectedItem = null;
             ComboBox_RoomStatus.SelectedItem = null;
         }
         private void UpdateUIState(bool isEditing)
         {
             Txt_RoomNumber.ReadOnly = isEditing;
-            ComboRox_RoomType.Enabled = true;
+            ComboBox_RoomType.Enabled = true;
             ComboBox_RoomStatus.Enabled = true;
             Btn_Confirm.Visible = true;
             Btn_Cancel.Visible = true;
 
             Txt_RoomNumber.Texts = string.Empty;
-            ComboRox_RoomType.SelectedItem = null;
+            ComboBox_RoomType.SelectedItem = null;
             ComboBox_RoomStatus.SelectedItem = null;
         }
         private void LoadRooms()
@@ -107,7 +107,7 @@ namespace GUI.Dashboard
                     DataGridViewRow selectedRow = Table_Room.Rows[e.RowIndex];
 
                     Txt_RoomNumber.Texts = selectedRow.Cells["Number"].Value.ToString();
-                    ComboRox_RoomType.SelectedItem = selectedRow.Cells["RoomType"].Value.ToString();
+                    ComboBox_RoomType.SelectedItem = selectedRow.Cells["RoomType"].Value.ToString();
                     ComboBox_RoomStatus.SelectedItem = selectedRow.Cells["Status"].Value.ToString();
                 }
                 else
@@ -157,7 +157,7 @@ namespace GUI.Dashboard
             try
             {
                 string num = Txt_RoomNumber.Texts;
-                string type = (string)ComboRox_RoomType.SelectedItem;
+                string type = (string)ComboBox_RoomType.SelectedItem;
                 string status = (string)ComboBox_RoomStatus.SelectedItem;
                 int.TryParse(num, out int roomNumber);
                 Room_Information.Room_Type room_Type = (Room_Information.Room_Type)Enum.Parse(typeof(Room_Information.Room_Type), type);
@@ -281,7 +281,7 @@ namespace GUI.Dashboard
         {
             if (isSearching && sender.GetType().Equals(typeof(ComboBox)))
             {
-                string roomType = ComboRox_RoomType.SelectedItem.ToString();
+                string roomType = ComboBox_RoomType.SelectedItem.ToString();
                 SearchByType(roomType);
             }
         }
@@ -290,8 +290,15 @@ namespace GUI.Dashboard
         {
             if (isSearching && e.KeyChar == (char)Keys.Enter)
             {
-                string roomNumber = Txt_RoomNumber.Texts;
-                SearchByNumber(roomNumber);
+                try
+                {
+                    string roomNumber = Txt_RoomNumber.Texts;
+                    SearchByNumber(roomNumber);
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Wrong Input Format/No Customer Found");
+                }
             }
         }
     }

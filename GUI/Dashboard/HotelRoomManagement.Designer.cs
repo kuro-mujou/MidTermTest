@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Table_Room = new System.Windows.Forms.DataGridView();
             this.Panel_Menu = new System.Windows.Forms.FlowLayoutPanel();
             this.Btn_Reload = new GUI.CustomUIComponent.RoundButton();
@@ -43,7 +43,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.ComboRox_RoomType = new GUI.CustomUIComponent.CustomCombobox();
+            this.ComboBox_RoomType = new GUI.CustomUIComponent.CustomCombobox();
             this.ComboBox_RoomStatus = new GUI.CustomUIComponent.CustomCombobox();
             this.Txt_RoomNumber = new CustomControls.RJControls.RoundTextBox();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -57,23 +57,23 @@
             // 
             this.Table_Room.BackgroundColor = System.Drawing.Color.White;
             this.Table_Room.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Table_Room.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Table_Room.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.Table_Room.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.Table_Room.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.Table_Room.DefaultCellStyle = dataGridViewCellStyle4;
             this.Table_Room.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Table_Room.Location = new System.Drawing.Point(0, 0);
             this.Table_Room.Margin = new System.Windows.Forms.Padding(0);
@@ -300,7 +300,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.ComboRox_RoomType);
+            this.panel1.Controls.Add(this.ComboBox_RoomType);
             this.panel1.Controls.Add(this.ComboBox_RoomStatus);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label3);
@@ -311,30 +311,30 @@
             this.panel1.Size = new System.Drawing.Size(1311, 100);
             this.panel1.TabIndex = 11;
             // 
-            // ComboRox_RoomType
+            // ComboBox_RoomType
             // 
-            this.ComboRox_RoomType.BackColor = System.Drawing.Color.DimGray;
-            this.ComboRox_RoomType.BorderColor = System.Drawing.Color.Gray;
-            this.ComboRox_RoomType.BorderSize = 2;
-            this.ComboRox_RoomType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.ComboRox_RoomType.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.ComboRox_RoomType.ForeColor = System.Drawing.Color.White;
-            this.ComboRox_RoomType.IconColor = System.Drawing.Color.White;
-            this.ComboRox_RoomType.Items.AddRange(new object[] {
+            this.ComboBox_RoomType.BackColor = System.Drawing.Color.DimGray;
+            this.ComboBox_RoomType.BorderColor = System.Drawing.Color.Gray;
+            this.ComboBox_RoomType.BorderSize = 2;
+            this.ComboBox_RoomType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.ComboBox_RoomType.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.ComboBox_RoomType.ForeColor = System.Drawing.Color.White;
+            this.ComboBox_RoomType.IconColor = System.Drawing.Color.White;
+            this.ComboBox_RoomType.Items.AddRange(new object[] {
             "Standard_Room1",
             "Standard_Room2",
             "Deluxe_Room",
             "Executive_Room"});
-            this.ComboRox_RoomType.ListBackColor = System.Drawing.Color.LightGray;
-            this.ComboRox_RoomType.ListTextColor = System.Drawing.Color.Black;
-            this.ComboRox_RoomType.Location = new System.Drawing.Point(121, 55);
-            this.ComboRox_RoomType.MinimumSize = new System.Drawing.Size(200, 30);
-            this.ComboRox_RoomType.Name = "ComboRox_RoomType";
-            this.ComboRox_RoomType.Padding = new System.Windows.Forms.Padding(2);
-            this.ComboRox_RoomType.Size = new System.Drawing.Size(250, 36);
-            this.ComboRox_RoomType.TabIndex = 11;
-            this.ComboRox_RoomType.Texts = "";
-            this.ComboRox_RoomType.OnSelectedIndexChanged += new System.EventHandler(this.ComboRox_RoomType_OnSelectedIndexChanged);
+            this.ComboBox_RoomType.ListBackColor = System.Drawing.Color.LightGray;
+            this.ComboBox_RoomType.ListTextColor = System.Drawing.Color.Black;
+            this.ComboBox_RoomType.Location = new System.Drawing.Point(121, 55);
+            this.ComboBox_RoomType.MinimumSize = new System.Drawing.Size(200, 30);
+            this.ComboBox_RoomType.Name = "ComboBox_RoomType";
+            this.ComboBox_RoomType.Padding = new System.Windows.Forms.Padding(2);
+            this.ComboBox_RoomType.Size = new System.Drawing.Size(250, 36);
+            this.ComboBox_RoomType.TabIndex = 11;
+            this.ComboBox_RoomType.Texts = "";
+            this.ComboBox_RoomType.OnSelectedIndexChanged += new System.EventHandler(this.ComboRox_RoomType_OnSelectedIndexChanged);
             // 
             // ComboBox_RoomStatus
             // 
@@ -429,7 +429,7 @@
         private CustomUIComponent.RoundButton Btn_Confirm;
         private System.Windows.Forms.Panel panel2;
         private CustomUIComponent.RoundButton Btn_Edit;
-        private CustomUIComponent.CustomCombobox ComboRox_RoomType;
+        private CustomUIComponent.CustomCombobox ComboBox_RoomType;
         private CustomUIComponent.RoundButton Btn_Cancel;
     }
 }

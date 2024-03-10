@@ -37,6 +37,7 @@
             this.roundButton2 = new GUI.CustomUIComponent.RoundButton();
             this.roundButton3 = new GUI.CustomUIComponent.RoundButton();
             this.roundButton4 = new GUI.CustomUIComponent.RoundButton();
+            this.label1 = new System.Windows.Forms.Label();
             this.Panel_Header.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.Panel_Menu.SuspendLayout();
@@ -45,17 +46,18 @@
             // Panel_Header
             // 
             this.Panel_Header.BackColor = System.Drawing.Color.White;
+            this.Panel_Header.Controls.Add(this.label1);
             this.Panel_Header.Controls.Add(this.pictureBox1);
             this.Panel_Header.Dock = System.Windows.Forms.DockStyle.Top;
             this.Panel_Header.Location = new System.Drawing.Point(0, 0);
             this.Panel_Header.Name = "Panel_Header";
-            this.Panel_Header.Size = new System.Drawing.Size(1202, 70);
+            this.Panel_Header.Size = new System.Drawing.Size(1493, 70);
             this.Panel_Header.TabIndex = 1;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::GUI.Properties.Resources.Hotel_Icon;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 0);
+            this.pictureBox1.Location = new System.Drawing.Point(772, 0);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(70, 70);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -67,7 +69,7 @@
             this.Panel_Content.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Panel_Content.Location = new System.Drawing.Point(250, 70);
             this.Panel_Content.Name = "Panel_Content";
-            this.Panel_Content.Size = new System.Drawing.Size(952, 633);
+            this.Panel_Content.Size = new System.Drawing.Size(1243, 633);
             this.Panel_Content.TabIndex = 2;
             // 
             // Panel_Menu
@@ -103,7 +105,7 @@
             this.roundButton1.Name = "roundButton1";
             this.roundButton1.Size = new System.Drawing.Size(240, 50);
             this.roundButton1.TabIndex = 0;
-            this.roundButton1.Text = "roundButton1";
+            this.roundButton1.Text = "Room Management";
             this.roundButton1.TextColor = System.Drawing.Color.Black;
             this.roundButton1.UseVisualStyleBackColor = false;
             this.roundButton1.Click += new System.EventHandler(this.RoundButton1_Click);
@@ -127,7 +129,7 @@
             this.roundButton2.Name = "roundButton2";
             this.roundButton2.Size = new System.Drawing.Size(240, 50);
             this.roundButton2.TabIndex = 1;
-            this.roundButton2.Text = "roundButton2";
+            this.roundButton2.Text = "Customer Management";
             this.roundButton2.TextColor = System.Drawing.Color.Black;
             this.roundButton2.UseVisualStyleBackColor = false;
             this.roundButton2.Click += new System.EventHandler(this.RoundButton2_Click);
@@ -151,7 +153,7 @@
             this.roundButton3.Name = "roundButton3";
             this.roundButton3.Size = new System.Drawing.Size(240, 50);
             this.roundButton3.TabIndex = 2;
-            this.roundButton3.Text = "roundButton3";
+            this.roundButton3.Text = "Staff Management";
             this.roundButton3.TextColor = System.Drawing.Color.Black;
             this.roundButton3.UseVisualStyleBackColor = false;
             this.roundButton3.Click += new System.EventHandler(this.RoundButton3_Click);
@@ -180,12 +182,22 @@
             this.roundButton4.UseVisualStyleBackColor = false;
             this.roundButton4.Click += new System.EventHandler(this.RoundButton4_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Calibri", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(848, 15);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(319, 41);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "AZURE HAVEN HOTEL";
+            // 
             // MainDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1202, 703);
+            this.ClientSize = new System.Drawing.Size(1493, 703);
             this.Controls.Add(this.Panel_Content);
             this.Controls.Add(this.Panel_Menu);
             this.Controls.Add(this.Panel_Header);
@@ -193,6 +205,7 @@
             this.Name = "MainDashboard";
             this.Text = "MainDashboard";
             this.Panel_Header.ResumeLayout(false);
+            this.Panel_Header.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.Panel_Menu.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -208,5 +221,6 @@
         private CustomUIComponent.RoundButton roundButton3;
         private CustomUIComponent.RoundButton roundButton4;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label1;
     }
 }

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace GUI.Dashboard
 {
-    public partial class ContentForm3 : Form
+    public partial class StaffManagement : Form
     {
-        public ContentForm3()
+        public StaffManagement()
         {
             InitializeComponent();
         }

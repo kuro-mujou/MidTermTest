@@ -73,11 +73,11 @@
     <Compile Include="Dashboard\CustomerManagement.Designer.cs">
       <DependentUpon>CustomerManagement.cs</DependentUpon>
     </Compile>
-    <Compile Include="Dashboard\ContentForm3.cs">
+    <Compile Include="Dashboard\StaffManagement.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Dashboard\ContentForm3.Designer.cs">
-      <DependentUpon>ContentForm3.cs</DependentUpon>
+    <Compile Include="Dashboard\StaffManagement.Designer.cs">
+      <DependentUpon>StaffManagement.cs</DependentUpon>
     </Compile>
     <Compile Include="Dashboard\ContentForm4.cs">
       <SubType>Form</SubType>
@@ -99,14 +99,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CustomUIComponent\CustomCombobox.resx">
+      <DependentUpon>CustomCombobox.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CustomUIComponent\RoundTextBox.resx">
       <DependentUpon>RoundTextBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dashboard\CustomerManagement.resx">
       <DependentUpon>CustomerManagement.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Dashboard\ContentForm3.resx">
-      <DependentUpon>ContentForm3.cs</DependentUpon>
+    <EmbeddedResource Include="Dashboard\StaffManagement.resx">
+      <DependentUpon>StaffManagement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dashboard\ContentForm4.resx">
       <DependentUpon>ContentForm4.cs</DependentUpon>

@@ -33,6 +33,10 @@ namespace BLL.BasicInfo
         {
             return DatabaseAccess_Customer.SearchByCustomer_Address(Address);
         }
+        public object CheckLogicSearchByCustomer_Gender(string Gender)
+        {
+            return DatabaseAccess_Customer.SearchByCustomer_Gender(Gender);
+        }
         public string CheckLogicAddRow(Customer_Information Customer_Information)
         {
             if (DatabaseAccess_Customer.AddRow(Customer_Information) >= 1)

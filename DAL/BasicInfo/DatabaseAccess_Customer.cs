@@ -25,7 +25,8 @@ namespace DAL.BasicInfo
                                 + Customer_Information.Customer_Name + "','"
                                 + Customer_Information.Customer_Email + "','"
                                 + Customer_Information.Customer_Phone + "','"
-                                + Customer_Information.Customer_Address.ToString() + "')";
+                                + Customer_Information.Customer_Address.ToString() + "','"
+                                + Customer_Information.Customer_Gender + "')";
             return DatabaseHelper.Nonquery(sqlInsert, conn);
         }
         public static int EditRow(Customer_Information Customer_Information)
@@ -35,7 +36,8 @@ namespace DAL.BasicInfo
                 + Customer_Information.Customer_Name + "', Customer_Email = '"
                 + Customer_Information.Customer_Email + "', Customer_Phone = '"
                 + Customer_Information.Customer_Phone + "', Customer_Address = '"
-                + Customer_Information.Customer_Address.ToString() + "' where Customer_ID = "
+                + Customer_Information.Customer_Address.ToString() + "', Gender = '"
+                + Customer_Information.Customer_Gender + "' where Customer_ID = "
                 + Customer_Information.Customer_ID + ";";
             return DatabaseHelper.Nonquery(sqlEdit, conn);
         }
@@ -75,6 +77,11 @@ namespace DAL.BasicInfo
         public static object SearchByCustomer_Address(string adress)
         {
             string sqlSearchStatus = "select * from Customer_Information where Customer_Address = '" + adress + "'";
+            return DatabaseHelper.LoadDataTable(sqlSearchStatus, conn);
+        }
+        public static object SearchByCustomer_Gender(string gender)
+        {
+            string sqlSearchStatus = "select * from Customer_Information where Gender = '" + gender + "'";
             return DatabaseHelper.LoadDataTable(sqlSearchStatus, conn);
         }
     }

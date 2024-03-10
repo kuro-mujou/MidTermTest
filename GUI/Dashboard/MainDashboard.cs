@@ -67,7 +67,7 @@ namespace GUI.Dashboard
 
         private void RoundButton3_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new ContentForm3(), sender);
+            OpenChildForm(new StaffManagement(), sender);
         }
 
         private void RoundButton4_Click(object sender, EventArgs e)

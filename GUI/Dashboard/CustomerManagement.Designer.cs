@@ -31,6 +31,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.Table_Customer = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.ComboBox_Gender = new GUI.CustomUIComponent.CustomCombobox();
+            this.label6 = new System.Windows.Forms.Label();
             this.Lbl_Country = new System.Windows.Forms.Label();
             this.Lbl_City = new System.Windows.Forms.Label();
             this.Lbl_Address = new System.Windows.Forms.Label();
@@ -39,7 +41,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.Panel_Menu = new System.Windows.Forms.FlowLayoutPanel();
             this.Txt_Country = new CustomControls.RJControls.RoundTextBox();
             this.Txt_City = new CustomControls.RJControls.RoundTextBox();
             this.Txt_Address = new CustomControls.RJControls.RoundTextBox();
@@ -48,6 +49,7 @@
             this.Txt_Name = new CustomControls.RJControls.RoundTextBox();
             this.Txt_Identity = new CustomControls.RJControls.RoundTextBox();
             this.Txt_ID = new CustomControls.RJControls.RoundTextBox();
+            this.Panel_Menu = new System.Windows.Forms.FlowLayoutPanel();
             this.Btn_Reload = new GUI.CustomUIComponent.RoundButton();
             this.Btn_Search = new GUI.CustomUIComponent.RoundButton();
             this.Btn_Add = new GUI.CustomUIComponent.RoundButton();
@@ -67,7 +69,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 100);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1350, 583);
+            this.panel1.Size = new System.Drawing.Size(1509, 583);
             this.panel1.TabIndex = 0;
             // 
             // Table_Customer
@@ -79,12 +81,14 @@
             this.Table_Customer.Name = "Table_Customer";
             this.Table_Customer.RowHeadersWidth = 51;
             this.Table_Customer.RowTemplate.Height = 24;
-            this.Table_Customer.Size = new System.Drawing.Size(1350, 583);
+            this.Table_Customer.Size = new System.Drawing.Size(1509, 583);
             this.Table_Customer.TabIndex = 0;
             this.Table_Customer.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Table_Customer_CellClick);
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.ComboBox_Gender);
+            this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.Lbl_Country);
             this.panel2.Controls.Add(this.Lbl_City);
             this.panel2.Controls.Add(this.Lbl_Address);
@@ -104,13 +108,45 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1350, 100);
+            this.panel2.Size = new System.Drawing.Size(1509, 100);
             this.panel2.TabIndex = 1;
+            // 
+            // ComboBox_Gender
+            // 
+            this.ComboBox_Gender.BackColor = System.Drawing.Color.DimGray;
+            this.ComboBox_Gender.BorderColor = System.Drawing.Color.Gray;
+            this.ComboBox_Gender.BorderSize = 2;
+            this.ComboBox_Gender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.ComboBox_Gender.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.ComboBox_Gender.ForeColor = System.Drawing.Color.White;
+            this.ComboBox_Gender.IconColor = System.Drawing.Color.White;
+            this.ComboBox_Gender.Items.AddRange(new object[] {
+            "male",
+            "female"});
+            this.ComboBox_Gender.ListBackColor = System.Drawing.Color.LightGray;
+            this.ComboBox_Gender.ListTextColor = System.Drawing.Color.Black;
+            this.ComboBox_Gender.Location = new System.Drawing.Point(1099, 10);
+            this.ComboBox_Gender.MinimumSize = new System.Drawing.Size(10, 30);
+            this.ComboBox_Gender.Name = "ComboBox_Gender";
+            this.ComboBox_Gender.Padding = new System.Windows.Forms.Padding(2);
+            this.ComboBox_Gender.Size = new System.Drawing.Size(119, 36);
+            this.ComboBox_Gender.TabIndex = 20;
+            this.ComboBox_Gender.Texts = "";
+            this.ComboBox_Gender.OnSelectedIndexChanged += new System.EventHandler(this.ComboBox_Gender_OnSelectedIndexChanged);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(1041, 21);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(52, 16);
+            this.label6.TabIndex = 19;
+            this.label6.Text = "Gender";
             // 
             // Lbl_Country
             // 
             this.Lbl_Country.AutoSize = true;
-            this.Lbl_Country.Location = new System.Drawing.Point(1053, 68);
+            this.Lbl_Country.Location = new System.Drawing.Point(1210, 71);
             this.Lbl_Country.Name = "Lbl_Country";
             this.Lbl_Country.Size = new System.Drawing.Size(52, 16);
             this.Lbl_Country.TabIndex = 17;
@@ -119,7 +155,7 @@
             // Lbl_City
             // 
             this.Lbl_City.AutoSize = true;
-            this.Lbl_City.Location = new System.Drawing.Point(1076, 18);
+            this.Lbl_City.Location = new System.Drawing.Point(1233, 21);
             this.Lbl_City.Name = "Lbl_City";
             this.Lbl_City.Size = new System.Drawing.Size(29, 16);
             this.Lbl_City.TabIndex = 16;
@@ -179,21 +215,6 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "ID";
             // 
-            // Panel_Menu
-            // 
-            this.Panel_Menu.Controls.Add(this.Btn_Reload);
-            this.Panel_Menu.Controls.Add(this.Btn_Search);
-            this.Panel_Menu.Controls.Add(this.Btn_Add);
-            this.Panel_Menu.Controls.Add(this.Btn_Edit);
-            this.Panel_Menu.Controls.Add(this.Btn_Delete);
-            this.Panel_Menu.Controls.Add(this.Btn_Confirm);
-            this.Panel_Menu.Controls.Add(this.Btn_Cancel);
-            this.Panel_Menu.Dock = System.Windows.Forms.DockStyle.Right;
-            this.Panel_Menu.Location = new System.Drawing.Point(1350, 0);
-            this.Panel_Menu.Name = "Panel_Menu";
-            this.Panel_Menu.Size = new System.Drawing.Size(180, 683);
-            this.Panel_Menu.TabIndex = 2;
-            // 
             // Txt_Country
             // 
             this.Txt_Country.BackColor = System.Drawing.Color.DimGray;
@@ -203,7 +224,7 @@
             this.Txt_Country.BorderSize = 2;
             this.Txt_Country.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Txt_Country.ForeColor = System.Drawing.Color.White;
-            this.Txt_Country.Location = new System.Drawing.Point(1112, 55);
+            this.Txt_Country.Location = new System.Drawing.Point(1269, 55);
             this.Txt_Country.Margin = new System.Windows.Forms.Padding(4);
             this.Txt_Country.Multiline = false;
             this.Txt_Country.Name = "Txt_Country";
@@ -226,7 +247,7 @@
             this.Txt_City.BorderSize = 2;
             this.Txt_City.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Txt_City.ForeColor = System.Drawing.Color.White;
-            this.Txt_City.Location = new System.Drawing.Point(1112, 10);
+            this.Txt_City.Location = new System.Drawing.Point(1269, 10);
             this.Txt_City.Margin = new System.Windows.Forms.Padding(4);
             this.Txt_City.Multiline = false;
             this.Txt_City.Name = "Txt_City";
@@ -383,6 +404,21 @@
             this.Txt_ID.Texts = "";
             this.Txt_ID.UnderlinedStyle = false;
             this.Txt_ID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_ID_KeyPress);
+            // 
+            // Panel_Menu
+            // 
+            this.Panel_Menu.Controls.Add(this.Btn_Reload);
+            this.Panel_Menu.Controls.Add(this.Btn_Search);
+            this.Panel_Menu.Controls.Add(this.Btn_Add);
+            this.Panel_Menu.Controls.Add(this.Btn_Edit);
+            this.Panel_Menu.Controls.Add(this.Btn_Delete);
+            this.Panel_Menu.Controls.Add(this.Btn_Confirm);
+            this.Panel_Menu.Controls.Add(this.Btn_Cancel);
+            this.Panel_Menu.Dock = System.Windows.Forms.DockStyle.Right;
+            this.Panel_Menu.Location = new System.Drawing.Point(1509, 0);
+            this.Panel_Menu.Name = "Panel_Menu";
+            this.Panel_Menu.Size = new System.Drawing.Size(180, 683);
+            this.Panel_Menu.TabIndex = 2;
             // 
             // Btn_Reload
             // 
@@ -557,7 +593,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1530, 683);
+            this.ClientSize = new System.Drawing.Size(1689, 683);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.Panel_Menu);
@@ -602,5 +638,7 @@
         private System.Windows.Forms.Label Lbl_City;
         private CustomControls.RJControls.RoundTextBox Txt_Country;
         private CustomControls.RJControls.RoundTextBox Txt_City;
+        private System.Windows.Forms.Label label6;
+        private CustomUIComponent.CustomCombobox ComboBox_Gender;
     }
 }
