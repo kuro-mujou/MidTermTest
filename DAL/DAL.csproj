@@ -59,6 +59,7 @@
   <ItemGroup>
     <Compile Include="BasicInfo\DatabaseAccess_Customer.cs" />
     <Compile Include="BasicInfo\DatabaseAccess_Rooms.cs" />
+    <Compile Include="BasicInfo\DatabaseAccess_Staff.cs" />
     <Compile Include="DatabaseDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

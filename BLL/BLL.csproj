@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="BasicInfo\Logic_Customers.cs" />
     <Compile Include="BasicInfo\Logic_Rooms.cs" />
+    <Compile Include="BasicInfo\Logic_Staff.cs" />
     <Compile Include="Login\Logic_Login.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

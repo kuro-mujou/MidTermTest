@@ -1,6 +1,6 @@
 ﻿namespace GUI.Dashboard
 {
-    partial class ContentForm4
+    partial class RoomRental
     {
         /// <summary>
         /// Required designer variable.

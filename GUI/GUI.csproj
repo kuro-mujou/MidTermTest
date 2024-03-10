@@ -79,11 +79,11 @@
     <Compile Include="Dashboard\StaffManagement.Designer.cs">
       <DependentUpon>StaffManagement.cs</DependentUpon>
     </Compile>
-    <Compile Include="Dashboard\ContentForm4.cs">
+    <Compile Include="Dashboard\RoomRental.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Dashboard\ContentForm4.Designer.cs">
-      <DependentUpon>ContentForm4.cs</DependentUpon>
+    <Compile Include="Dashboard\RoomRental.Designer.cs">
+      <DependentUpon>RoomRental.cs</DependentUpon>
     </Compile>
     <Compile Include="Dashboard\MainDashboard.cs">
       <SubType>Form</SubType>
@@ -111,8 +111,8 @@
     <EmbeddedResource Include="Dashboard\StaffManagement.resx">
       <DependentUpon>StaffManagement.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Dashboard\ContentForm4.resx">
-      <DependentUpon>ContentForm4.cs</DependentUpon>
+    <EmbeddedResource Include="Dashboard\RoomRental.resx">
+      <DependentUpon>RoomRental.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dashboard\HotelRoomManagement.resx">
       <DependentUpon>HotelRoomManagement.cs</DependentUpon>

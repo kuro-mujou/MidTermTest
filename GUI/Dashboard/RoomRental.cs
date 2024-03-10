@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace GUI.Dashboard
 {
-    public partial class ContentForm4 : Form
+    public partial class RoomRental : Form
     {
-        public ContentForm4()
+        public RoomRental()
         {
             InitializeComponent();
         }
