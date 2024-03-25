@@ -59,7 +59,7 @@ namespace DAL.BasicInfo
 
         public static Room_Information GetRoom_Information(int number)
         {
-            string sqlSearch = "select * from Room_Information where Number = '" + number + "'";
+            string sqlSearch = "select * from Room_Information where Number = " + number;
             SqlDataReader reader = DatabaseHelper.GetOneRow(sqlSearch, conn);
             if (reader.Read())
             {
@@ -68,10 +68,12 @@ namespace DAL.BasicInfo
                 string Status = reader.GetString(2);
                 Room_Information.Room_Type room_Type = (Room_Information.Room_Type)Enum.Parse(typeof(Room_Information.Room_Type), RoomType);
                 Room_Information.Room_Status room_Status = (Room_Information.Room_Status)Enum.Parse(typeof(Room_Information.Room_Status), Status);
+                conn.Close();
                 return new Room_Information(Number, room_Type, room_Status);
             }
             else
             {
+                conn.Close();
                 return null;
             }
         }

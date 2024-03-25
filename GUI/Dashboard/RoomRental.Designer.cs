@@ -32,6 +32,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.label3 = new System.Windows.Forms.Label();
+            this.Txt_IdentitySearch = new CustomControls.RJControls.RoundTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.splitter2 = new System.Windows.Forms.Splitter();
@@ -39,12 +40,20 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.Txt_Customer_Name = new CustomControls.RJControls.RoundTextBox();
+            this.Txt_Customer_Phone = new CustomControls.RJControls.RoundTextBox();
+            this.Txt_Customer_Address = new CustomControls.RJControls.RoundTextBox();
+            this.Txt_Customer_Identity = new CustomControls.RJControls.RoundTextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.splitter3 = new System.Windows.Forms.Splitter();
             this.label8 = new System.Windows.Forms.Label();
+            this.Txt_RoomNumberSearch = new CustomControls.RJControls.RoundTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.lbl_Status = new System.Windows.Forms.Label();
+            this.ComboBox_RentalStatus = new GUI.CustomUIComponent.CustomCombobox();
+            this.Btn_Cancel = new GUI.CustomUIComponent.RoundButton();
+            this.Btn_Confirm = new GUI.CustomUIComponent.RoundButton();
             this.Time_CheckOut = new System.Windows.Forms.DateTimePicker();
             this.label14 = new System.Windows.Forms.Label();
             this.Time_CheckIn = new System.Windows.Forms.DateTimePicker();
@@ -53,29 +62,20 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.Panel_Menu = new System.Windows.Forms.FlowLayoutPanel();
-            this.Table_Rental = new System.Windows.Forms.DataGridView();
-            this.Txt_IdentitySearch = new CustomControls.RJControls.RoundTextBox();
-            this.Txt_Customer_Name = new CustomControls.RJControls.RoundTextBox();
-            this.Txt_Customer_Phone = new CustomControls.RJControls.RoundTextBox();
-            this.Txt_Customer_Address = new CustomControls.RJControls.RoundTextBox();
-            this.Txt_Customer_Identity = new CustomControls.RJControls.RoundTextBox();
-            this.Txt_RoomNumberSearch = new CustomControls.RJControls.RoundTextBox();
-            this.ComboBox_RentalStatus = new GUI.CustomUIComponent.CustomCombobox();
-            this.Btn_Cancel = new GUI.CustomUIComponent.RoundButton();
-            this.Btn_Confirm = new GUI.CustomUIComponent.RoundButton();
             this.Txt_Room_Number = new CustomControls.RJControls.RoundTextBox();
             this.Txt_Room_Type = new CustomControls.RJControls.RoundTextBox();
             this.Txt_Room_Price = new CustomControls.RJControls.RoundTextBox();
             this.Txt_Room_Status = new CustomControls.RJControls.RoundTextBox();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.Table_Rental = new System.Windows.Forms.DataGridView();
+            this.Panel_Menu = new System.Windows.Forms.FlowLayoutPanel();
             this.Btn_Reload = new GUI.CustomUIComponent.RoundButton();
             this.Btn_Search = new GUI.CustomUIComponent.RoundButton();
             this.Btn_Add = new GUI.CustomUIComponent.RoundButton();
             this.Btn_Edit = new GUI.CustomUIComponent.RoundButton();
             this.Btn_Delete = new GUI.CustomUIComponent.RoundButton();
-            this.panel6 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -83,9 +83,9 @@
             this.panel4.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
             this.panel5.SuspendLayout();
-            this.Panel_Menu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Table_Rental)).BeginInit();
             this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Table_Rental)).BeginInit();
+            this.Panel_Menu.SuspendLayout();
             this.SuspendLayout();
             // 
             // flowLayoutPanel1
@@ -141,6 +141,30 @@
             this.label3.TabIndex = 6;
             this.label3.Text = "Customer Identity Number";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // Txt_IdentitySearch
+            // 
+            this.Txt_IdentitySearch.BackColor = System.Drawing.Color.DimGray;
+            this.Txt_IdentitySearch.BorderColor = System.Drawing.Color.Gray;
+            this.Txt_IdentitySearch.BorderFocusColor = System.Drawing.Color.LightGray;
+            this.Txt_IdentitySearch.BorderRadius = 15;
+            this.Txt_IdentitySearch.BorderSize = 2;
+            this.Txt_IdentitySearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Txt_IdentitySearch.ForeColor = System.Drawing.Color.White;
+            this.Txt_IdentitySearch.Location = new System.Drawing.Point(134, 48);
+            this.Txt_IdentitySearch.Margin = new System.Windows.Forms.Padding(4);
+            this.Txt_IdentitySearch.Multiline = false;
+            this.Txt_IdentitySearch.Name = "Txt_IdentitySearch";
+            this.Txt_IdentitySearch.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.Txt_IdentitySearch.PasswordChar = false;
+            this.Txt_IdentitySearch.PlaceholderColor = System.Drawing.Color.LightGray;
+            this.Txt_IdentitySearch.PlaceholderText = "Search here";
+            this.Txt_IdentitySearch.ReadOnly = false;
+            this.Txt_IdentitySearch.Size = new System.Drawing.Size(362, 35);
+            this.Txt_IdentitySearch.TabIndex = 5;
+            this.Txt_IdentitySearch.Texts = "";
+            this.Txt_IdentitySearch.UnderlinedStyle = false;
+            this.Txt_IdentitySearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_IdentitySearch_KeyPress);
             // 
             // label1
             // 
@@ -214,237 +238,6 @@
             this.label4.Size = new System.Drawing.Size(104, 16);
             this.label4.TabIndex = 5;
             this.label4.Text = "Customer Name";
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.splitter3);
-            this.panel2.Controls.Add(this.label8);
-            this.panel2.Controls.Add(this.Txt_RoomNumberSearch);
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel2.Location = new System.Drawing.Point(0, 300);
-            this.panel2.Margin = new System.Windows.Forms.Padding(0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(500, 100);
-            this.panel2.TabIndex = 1;
-            // 
-            // splitter3
-            // 
-            this.splitter3.BackColor = System.Drawing.Color.Black;
-            this.splitter3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.splitter3.Location = new System.Drawing.Point(0, 97);
-            this.splitter3.Name = "splitter3";
-            this.splitter3.Size = new System.Drawing.Size(500, 3);
-            this.splitter3.TabIndex = 9;
-            this.splitter3.TabStop = false;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(26, 34);
-            this.label8.Margin = new System.Windows.Forms.Padding(0);
-            this.label8.MaximumSize = new System.Drawing.Size(100, 50);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(90, 32);
-            this.label8.TabIndex = 8;
-            this.label8.Text = "Search Room Number";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(157, 6);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(164, 24);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Room Information";
-            // 
-            // panel4
-            // 
-            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel4.AutoSize = true;
-            this.panel4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.panel4.BackColor = System.Drawing.Color.White;
-            this.panel4.Controls.Add(this.lbl_Status);
-            this.panel4.Controls.Add(this.ComboBox_RentalStatus);
-            this.panel4.Controls.Add(this.Btn_Cancel);
-            this.panel4.Controls.Add(this.Btn_Confirm);
-            this.panel4.Controls.Add(this.Time_CheckOut);
-            this.panel4.Controls.Add(this.label14);
-            this.panel4.Controls.Add(this.Time_CheckIn);
-            this.panel4.Controls.Add(this.label13);
-            this.panel4.Controls.Add(this.label9);
-            this.panel4.Controls.Add(this.label10);
-            this.panel4.Controls.Add(this.label11);
-            this.panel4.Controls.Add(this.label12);
-            this.panel4.Controls.Add(this.Txt_Room_Number);
-            this.panel4.Controls.Add(this.Txt_Room_Type);
-            this.panel4.Controls.Add(this.Txt_Room_Price);
-            this.panel4.Controls.Add(this.Txt_Room_Status);
-            this.panel4.Location = new System.Drawing.Point(0, 400);
-            this.panel4.Margin = new System.Windows.Forms.Padding(0);
-            this.panel4.MaximumSize = new System.Drawing.Size(500, 1000);
-            this.panel4.MinimumSize = new System.Drawing.Size(500, 600);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(500, 600);
-            this.panel4.TabIndex = 3;
-            // 
-            // lbl_Status
-            // 
-            this.lbl_Status.AutoSize = true;
-            this.lbl_Status.Location = new System.Drawing.Point(22, 264);
-            this.lbl_Status.Name = "lbl_Status";
-            this.lbl_Status.Size = new System.Drawing.Size(44, 16);
-            this.lbl_Status.TabIndex = 26;
-            this.lbl_Status.Text = "Status";
-            // 
-            // Time_CheckOut
-            // 
-            this.Time_CheckOut.Location = new System.Drawing.Point(134, 226);
-            this.Time_CheckOut.Name = "Time_CheckOut";
-            this.Time_CheckOut.Size = new System.Drawing.Size(358, 22);
-            this.Time_CheckOut.TabIndex = 22;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(22, 226);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(94, 16);
-            this.label14.TabIndex = 21;
-            this.label14.Text = "Check Out day";
-            // 
-            // Time_CheckIn
-            // 
-            this.Time_CheckIn.Location = new System.Drawing.Point(134, 188);
-            this.Time_CheckIn.Name = "Time_CheckIn";
-            this.Time_CheckIn.Size = new System.Drawing.Size(358, 22);
-            this.Time_CheckIn.TabIndex = 19;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(23, 188);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(84, 16);
-            this.label13.TabIndex = 18;
-            this.label13.Text = "Check In day";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(23, 145);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(78, 16);
-            this.label9.TabIndex = 16;
-            this.label9.Text = "Room Price";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(23, 103);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(79, 16);
-            this.label10.TabIndex = 15;
-            this.label10.Text = "Room Type";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(23, 60);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(84, 16);
-            this.label11.TabIndex = 14;
-            this.label11.Text = "Room Status";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(23, 17);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(95, 16);
-            this.label12.TabIndex = 13;
-            this.label12.Text = "Room Number";
-            // 
-            // flowLayoutPanel2
-            // 
-            this.flowLayoutPanel2.Controls.Add(this.flowLayoutPanel1);
-            this.flowLayoutPanel2.Controls.Add(this.panel5);
-            this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
-            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(1660, 950);
-            this.flowLayoutPanel2.TabIndex = 1;
-            this.flowLayoutPanel2.WrapContents = false;
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.White;
-            this.panel5.Controls.Add(this.panel6);
-            this.panel5.Controls.Add(this.Panel_Menu);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel5.Location = new System.Drawing.Point(500, 0);
-            this.panel5.Margin = new System.Windows.Forms.Padding(0);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1800, 1000);
-            this.panel5.TabIndex = 1;
-            // 
-            // Panel_Menu
-            // 
-            this.Panel_Menu.Controls.Add(this.Btn_Reload);
-            this.Panel_Menu.Controls.Add(this.Btn_Search);
-            this.Panel_Menu.Controls.Add(this.Btn_Add);
-            this.Panel_Menu.Controls.Add(this.Btn_Edit);
-            this.Panel_Menu.Controls.Add(this.Btn_Delete);
-            this.Panel_Menu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Panel_Menu.Location = new System.Drawing.Point(0, 0);
-            this.Panel_Menu.Name = "Panel_Menu";
-            this.Panel_Menu.Padding = new System.Windows.Forms.Padding(0, 30, 0, 30);
-            this.Panel_Menu.Size = new System.Drawing.Size(1800, 100);
-            this.Panel_Menu.TabIndex = 2;
-            // 
-            // Table_Rental
-            // 
-            this.Table_Rental.BackgroundColor = System.Drawing.Color.White;
-            this.Table_Rental.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Table_Rental.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Table_Rental.Location = new System.Drawing.Point(0, 0);
-            this.Table_Rental.Margin = new System.Windows.Forms.Padding(0);
-            this.Table_Rental.Name = "Table_Rental";
-            this.Table_Rental.RowHeadersWidth = 51;
-            this.Table_Rental.RowTemplate.Height = 24;
-            this.Table_Rental.Size = new System.Drawing.Size(1800, 900);
-            this.Table_Rental.TabIndex = 1;
-            this.Table_Rental.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Table_Rental_CellClick);
-            // 
-            // Txt_IdentitySearch
-            // 
-            this.Txt_IdentitySearch.BackColor = System.Drawing.Color.DimGray;
-            this.Txt_IdentitySearch.BorderColor = System.Drawing.Color.Gray;
-            this.Txt_IdentitySearch.BorderFocusColor = System.Drawing.Color.LightGray;
-            this.Txt_IdentitySearch.BorderRadius = 15;
-            this.Txt_IdentitySearch.BorderSize = 2;
-            this.Txt_IdentitySearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Txt_IdentitySearch.ForeColor = System.Drawing.Color.White;
-            this.Txt_IdentitySearch.Location = new System.Drawing.Point(134, 48);
-            this.Txt_IdentitySearch.Margin = new System.Windows.Forms.Padding(4);
-            this.Txt_IdentitySearch.Multiline = false;
-            this.Txt_IdentitySearch.Name = "Txt_IdentitySearch";
-            this.Txt_IdentitySearch.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.Txt_IdentitySearch.PasswordChar = false;
-            this.Txt_IdentitySearch.PlaceholderColor = System.Drawing.Color.LightGray;
-            this.Txt_IdentitySearch.PlaceholderText = "Search here";
-            this.Txt_IdentitySearch.ReadOnly = false;
-            this.Txt_IdentitySearch.Size = new System.Drawing.Size(362, 35);
-            this.Txt_IdentitySearch.TabIndex = 5;
-            this.Txt_IdentitySearch.Texts = "";
-            this.Txt_IdentitySearch.UnderlinedStyle = false;
-            this.Txt_IdentitySearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_IdentitySearch_KeyPress);
             // 
             // Txt_Customer_Name
             // 
@@ -538,6 +331,42 @@
             this.Txt_Customer_Identity.Texts = "";
             this.Txt_Customer_Identity.UnderlinedStyle = false;
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.splitter3);
+            this.panel2.Controls.Add(this.label8);
+            this.panel2.Controls.Add(this.Txt_RoomNumberSearch);
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel2.Location = new System.Drawing.Point(0, 300);
+            this.panel2.Margin = new System.Windows.Forms.Padding(0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(500, 100);
+            this.panel2.TabIndex = 1;
+            // 
+            // splitter3
+            // 
+            this.splitter3.BackColor = System.Drawing.Color.Black;
+            this.splitter3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.splitter3.Location = new System.Drawing.Point(0, 97);
+            this.splitter3.Name = "splitter3";
+            this.splitter3.Size = new System.Drawing.Size(500, 3);
+            this.splitter3.TabIndex = 9;
+            this.splitter3.TabStop = false;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(26, 34);
+            this.label8.Margin = new System.Windows.Forms.Padding(0);
+            this.label8.MaximumSize = new System.Drawing.Size(100, 50);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(90, 32);
+            this.label8.TabIndex = 8;
+            this.label8.Text = "Search Room Number";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Txt_RoomNumberSearch
             // 
             this.Txt_RoomNumberSearch.BackColor = System.Drawing.Color.DimGray;
@@ -561,6 +390,57 @@
             this.Txt_RoomNumberSearch.Texts = "";
             this.Txt_RoomNumberSearch.UnderlinedStyle = false;
             this.Txt_RoomNumberSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_RoomNumberSearch_KeyPress);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(157, 6);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(164, 24);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Room Information";
+            // 
+            // panel4
+            // 
+            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel4.AutoSize = true;
+            this.panel4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.panel4.BackColor = System.Drawing.Color.White;
+            this.panel4.Controls.Add(this.lbl_Status);
+            this.panel4.Controls.Add(this.ComboBox_RentalStatus);
+            this.panel4.Controls.Add(this.Btn_Cancel);
+            this.panel4.Controls.Add(this.Btn_Confirm);
+            this.panel4.Controls.Add(this.Time_CheckOut);
+            this.panel4.Controls.Add(this.label14);
+            this.panel4.Controls.Add(this.Time_CheckIn);
+            this.panel4.Controls.Add(this.label13);
+            this.panel4.Controls.Add(this.label9);
+            this.panel4.Controls.Add(this.label10);
+            this.panel4.Controls.Add(this.label11);
+            this.panel4.Controls.Add(this.label12);
+            this.panel4.Controls.Add(this.Txt_Room_Number);
+            this.panel4.Controls.Add(this.Txt_Room_Type);
+            this.panel4.Controls.Add(this.Txt_Room_Price);
+            this.panel4.Controls.Add(this.Txt_Room_Status);
+            this.panel4.Location = new System.Drawing.Point(0, 400);
+            this.panel4.Margin = new System.Windows.Forms.Padding(0);
+            this.panel4.MaximumSize = new System.Drawing.Size(500, 1000);
+            this.panel4.MinimumSize = new System.Drawing.Size(500, 600);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(500, 600);
+            this.panel4.TabIndex = 3;
+            // 
+            // lbl_Status
+            // 
+            this.lbl_Status.AutoSize = true;
+            this.lbl_Status.Location = new System.Drawing.Point(22, 264);
+            this.lbl_Status.Name = "lbl_Status";
+            this.lbl_Status.Size = new System.Drawing.Size(44, 16);
+            this.lbl_Status.TabIndex = 26;
+            this.lbl_Status.Text = "Status";
             // 
             // ComboBox_RentalStatus
             // 
@@ -629,6 +509,75 @@
             this.Btn_Confirm.TextColor = System.Drawing.Color.Black;
             this.Btn_Confirm.UseVisualStyleBackColor = false;
             this.Btn_Confirm.Click += new System.EventHandler(this.Btn_Confirm_Click);
+            // 
+            // Time_CheckOut
+            // 
+            this.Time_CheckOut.Location = new System.Drawing.Point(134, 226);
+            this.Time_CheckOut.Name = "Time_CheckOut";
+            this.Time_CheckOut.Size = new System.Drawing.Size(358, 22);
+            this.Time_CheckOut.TabIndex = 22;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(22, 226);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(94, 16);
+            this.label14.TabIndex = 21;
+            this.label14.Text = "Check Out day";
+            // 
+            // Time_CheckIn
+            // 
+            this.Time_CheckIn.Location = new System.Drawing.Point(134, 188);
+            this.Time_CheckIn.Name = "Time_CheckIn";
+            this.Time_CheckIn.Size = new System.Drawing.Size(358, 22);
+            this.Time_CheckIn.TabIndex = 19;
+            this.Time_CheckIn.ValueChanged += new System.EventHandler(this.dateTimePickerCheckIn_ValueChanged);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(23, 188);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(84, 16);
+            this.label13.TabIndex = 18;
+            this.label13.Text = "Check In day";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(23, 145);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(78, 16);
+            this.label9.TabIndex = 16;
+            this.label9.Text = "Room Price";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(23, 103);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(79, 16);
+            this.label10.TabIndex = 15;
+            this.label10.Text = "Room Type";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(23, 60);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(84, 16);
+            this.label11.TabIndex = 14;
+            this.label11.Text = "Room Status";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(23, 17);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(95, 16);
+            this.label12.TabIndex = 13;
+            this.label12.Text = "Room Number";
             // 
             // Txt_Room_Number
             // 
@@ -721,6 +670,67 @@
             this.Txt_Room_Status.TabIndex = 10;
             this.Txt_Room_Status.Texts = "";
             this.Txt_Room_Status.UnderlinedStyle = false;
+            // 
+            // flowLayoutPanel2
+            // 
+            this.flowLayoutPanel2.Controls.Add(this.flowLayoutPanel1);
+            this.flowLayoutPanel2.Controls.Add(this.panel5);
+            this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(1660, 950);
+            this.flowLayoutPanel2.TabIndex = 1;
+            this.flowLayoutPanel2.WrapContents = false;
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.White;
+            this.panel5.Controls.Add(this.panel6);
+            this.panel5.Controls.Add(this.Panel_Menu);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel5.Location = new System.Drawing.Point(500, 0);
+            this.panel5.Margin = new System.Windows.Forms.Padding(0);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(1800, 1000);
+            this.panel5.TabIndex = 1;
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.Table_Rental);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel6.Location = new System.Drawing.Point(0, 100);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(1800, 900);
+            this.panel6.TabIndex = 3;
+            // 
+            // Table_Rental
+            // 
+            this.Table_Rental.BackgroundColor = System.Drawing.Color.White;
+            this.Table_Rental.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Table_Rental.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Table_Rental.Location = new System.Drawing.Point(0, 0);
+            this.Table_Rental.Margin = new System.Windows.Forms.Padding(0);
+            this.Table_Rental.Name = "Table_Rental";
+            this.Table_Rental.RowHeadersWidth = 51;
+            this.Table_Rental.RowTemplate.Height = 24;
+            this.Table_Rental.Size = new System.Drawing.Size(1800, 900);
+            this.Table_Rental.TabIndex = 1;
+            this.Table_Rental.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Table_Rental_CellClick);
+            // 
+            // Panel_Menu
+            // 
+            this.Panel_Menu.Controls.Add(this.Btn_Reload);
+            this.Panel_Menu.Controls.Add(this.Btn_Search);
+            this.Panel_Menu.Controls.Add(this.Btn_Add);
+            this.Panel_Menu.Controls.Add(this.Btn_Edit);
+            this.Panel_Menu.Controls.Add(this.Btn_Delete);
+            this.Panel_Menu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Panel_Menu.Location = new System.Drawing.Point(0, 0);
+            this.Panel_Menu.Name = "Panel_Menu";
+            this.Panel_Menu.Padding = new System.Windows.Forms.Padding(0, 30, 0, 30);
+            this.Panel_Menu.Size = new System.Drawing.Size(1800, 100);
+            this.Panel_Menu.TabIndex = 2;
             // 
             // Btn_Reload
             // 
@@ -842,15 +852,6 @@
             this.Btn_Delete.UseVisualStyleBackColor = false;
             this.Btn_Delete.Click += new System.EventHandler(this.Btn_Delete_Click);
             // 
-            // panel6
-            // 
-            this.panel6.Controls.Add(this.Table_Rental);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel6.Location = new System.Drawing.Point(0, 100);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1800, 900);
-            this.panel6.TabIndex = 3;
-            // 
             // RoomRental
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -873,9 +874,9 @@
             this.panel4.PerformLayout();
             this.flowLayoutPanel2.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
-            this.Panel_Menu.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.Table_Rental)).EndInit();
             this.panel6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.Table_Rental)).EndInit();
+            this.Panel_Menu.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

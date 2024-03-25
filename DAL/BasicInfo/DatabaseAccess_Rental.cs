@@ -6,6 +6,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace DAL.BasicInfo
 {
@@ -56,16 +57,18 @@ namespace DAL.BasicInfo
                 int roomNumber = reader.GetInt32(4);
                 string status = reader.GetString(5);
                 RoomManagement.RentalStatus rentalStatus = (RoomManagement.RentalStatus)Enum.Parse(typeof(RoomManagement.RentalStatus), status);
+                conn.Close();
                 return new RoomManagement(id, startday, endday, customerID, roomNumber, rentalStatus);
             }
             else
             {
+                conn.Close();
                 return null;
             }
         }
         public static DataTable SearchByCustomer_Identity(int ID)
         {
-            string sqlSearchStatus = "select * from Room_Management where Customer_Identity = '" + ID + "'";
+            string sqlSearchStatus = "select * from Room_Management where Customer_ID = '" + ID + "'";
             return DatabaseHelper.LoadDataTable(sqlSearchStatus, conn);
         }
         public static DataTable SearchByRoom_Number(int Number)
@@ -76,28 +79,31 @@ namespace DAL.BasicInfo
 
         public static object SearchByID(int id)
         {
-            throw new NotImplementedException();
+            string sqlSearch = "select * from Room_Management where Id = '" + id + "'";
+            return DatabaseHelper.LoadDataTable(sqlSearch, conn);
         }
 
         public static object SearchByStartDay(string startDay)
         {
-            throw new NotImplementedException();
+            string sqlSearch = "select * from Room_Management where StartDay = '" + startDay + "'";
+            return DatabaseHelper.LoadDataTable(sqlSearch, conn);
         }
 
-        public static object SearchByEndDay(string endDay)
+        public static object SearchByEndDay(string EndDay)
         {
-            throw new NotImplementedException();
+            string sqlSearch = "select * from Room_Management where EndDay = '" + EndDay + "'";
+            return DatabaseHelper.LoadDataTable(sqlSearch, conn);
         }
 
         public static object SearchByStatus(string status)
         {
-            throw new NotImplementedException();
+            string sqlSearch = "select * from Room_Management where RentalStatus = '" + status + "'";
+            return DatabaseHelper.LoadDataTable(sqlSearch, conn);
         }
 
         //public static object SearchByCustomer_Name(string name)
         //{
-        //    string sqlSearchStatus = "select * from RoomManagement where Customer_Name = '" + name + "'";
-        //    return DatabaseHelper.LoadDataTable(sqlSearchStatus, conn);
+        //   
         //}
 
         //public static object SearchByCustomer_Email(string email)

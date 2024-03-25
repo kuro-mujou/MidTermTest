@@ -58,11 +58,8 @@ namespace DAL
             }
             catch (SqlException)
             {
-                return null;
-            }
-            finally
-            {
                 conn.Close();
+                return null;
             }
         }
     }

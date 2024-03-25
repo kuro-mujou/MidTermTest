@@ -3,13 +3,7 @@ using DTO.BasicInfo.Customer;
 using DTO.BasicInfo;
 using GUI.CustomUIComponent;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GUI.Dashboard
@@ -140,7 +134,7 @@ namespace GUI.Dashboard
                     currentButton = (RoundButton)btnSender;
                     currentButton.BackColor = Color.Black;
                     currentButton.ForeColor = Color.White;
-                    currentButton.Font = new Font("Calibri", 12.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                    currentButton.Font = new Font("Calibri", 12.5F, FontStyle.Bold, GraphicsUnit.Point, ((byte)(0)));
                 }
             }
         }
@@ -152,7 +146,7 @@ namespace GUI.Dashboard
                 {
                     previousBtn.BackColor = Color.White;
                     previousBtn.ForeColor = Color.Black;
-                    previousBtn.Font = new Font("Calibri", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                    previousBtn.Font = new Font("Calibri", 10.2F, FontStyle.Bold, GraphicsUnit.Point, ((byte)(0)));
                 }
             }
         }

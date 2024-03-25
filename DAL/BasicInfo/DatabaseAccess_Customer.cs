@@ -88,21 +88,23 @@ namespace DAL.BasicInfo
 
         public static Customer_Information GetCustomer_Information(int customerId)
         {
-            string sqlSearch = "select * from Customer_Information where Customer_ID = '" + customerId + "'";
+            string sqlSearch = "select * from Customer_Information where Customer_ID = " + customerId ;
             SqlDataReader reader = DatabaseHelper.GetOneRow(sqlSearch, conn);
             if (reader.Read())
             {
                 int Customer_ID = reader.GetInt32(0);
                 int Customer_Identity = reader.GetInt32(1);
                 string Customer_Name = reader.GetString(2);
-                string Customer_Gender = reader.GetString(3);
-                string Customer_Email = reader.GetString(4);
-                string Customer_Phone = reader.GetString(5);
-                string Customer_Address = reader.GetString(6);
+                string Customer_Email = reader.GetString(3);
+                string Customer_Phone = reader.GetString(4);
+                string Customer_Address = reader.GetString(5);
+                string Customer_Gender = reader.GetString(6);
+                conn.Close();
                 return new Customer_Information(Customer_ID,Customer_Identity,Customer_Name,Customer_Gender,Customer_Email,Customer_Phone,Address.StringToAddress(Customer_Address));
             }
             else
             {
+                conn.Close();
                 return null;
             }
         }

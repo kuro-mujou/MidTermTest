@@ -17,9 +17,11 @@ namespace GUI
         private void Btn_Login_Click(object sender, EventArgs e)
         {
             ResetUI(sender, e);
-            Login_Account Account = new Login_Account();
-            Account.UserName = Txt_Username.Texts;
-            Account.Password = Txt_Password.Texts;
+            Login_Account Account = new Login_Account
+            {
+                UserName = Txt_Username.Texts,
+                Password = Txt_Password.Texts
+            };
             string a = Logic_Login.CheckLogicLogin(Account);
             switch (a)
             {

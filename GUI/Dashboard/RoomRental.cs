@@ -26,6 +26,7 @@ namespace GUI.Dashboard
         public RoomRental()
         {
             InitializeComponent();
+            Time_CheckOut.MinDate = Time_CheckIn.Value;
         }
         private void ActivateButton(object btnSender)
         {
@@ -37,7 +38,7 @@ namespace GUI.Dashboard
                     currentButton = (RoundButton)btnSender;
                     currentButton.BackColor = Color.Black;
                     currentButton.ForeColor = Color.White;
-                    currentButton.Font = new Font("Calibri", 12.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                    currentButton.Font = new Font("Calibri", 12.5F, FontStyle.Bold, GraphicsUnit.Point, ((byte)(0)));
                 }
             }
         }
@@ -49,7 +50,7 @@ namespace GUI.Dashboard
                 {
                     previousBtn.BackColor = Color.White;
                     previousBtn.ForeColor = Color.Black;
-                    previousBtn.Font = new Font("Calibri", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                    previousBtn.Font = new Font("Calibri", 10.2F, FontStyle.Bold, GraphicsUnit.Point, ((byte)(0)));
                 }
             }
         }
@@ -116,7 +117,7 @@ namespace GUI.Dashboard
                 {
                     DataGridViewRow selectedRow = Table_Rental.Rows[e.RowIndex];
 
-                    Txt_Customer_Identity.Texts = selectedRow.Cells["CustomerID"].Value.ToString();
+                    Txt_Customer_Identity.Texts = selectedRow.Cells["Customer_ID"].Value.ToString();
 
                     Txt_Room_Number.Texts = selectedRow.Cells["Number"].Value.ToString();
 
@@ -125,7 +126,7 @@ namespace GUI.Dashboard
 
                     ComboBox_RentalStatus.SelectedItem = selectedRow.Cells["RentalStatus"].Value.ToString();
 
-                    Customer_Information customer_Information = Logic_Rental.GetCustomer_Information(int.Parse(selectedRow.Cells["CustomerID"].Value.ToString()));
+                    Customer_Information customer_Information = Logic_Rental.GetCustomer_Information(int.Parse(selectedRow.Cells["Customer_ID"].Value.ToString()));
                     Room_Information room_Information = Logic_Rental.GetRoom_Information(int.Parse(selectedRow.Cells["Number"].Value.ToString()));
 
                     Txt_Customer_Name.Texts = customer_Information.Customer_Name;
@@ -155,8 +156,8 @@ namespace GUI.Dashboard
                             SearchByEndDay(selectedRow.Cells["EndDay"].Value.ToString());
                             break;
 
-                        case "CustomerID":
-                            SearchByCustomer_Identity(int.Parse(selectedRow.Cells["CustomerID"].Value.ToString()));
+                        case "Customer_ID":
+                            SearchByCustomer_Identity(int.Parse(selectedRow.Cells["Customer_ID"].Value.ToString()));
                             break;
 
                         case "Number":
@@ -175,8 +176,8 @@ namespace GUI.Dashboard
         {
             try
             {
-                string startday = Time_CheckIn.ToString();
-                string endday = Time_CheckOut.ToString();
+                string startday = Time_CheckIn.Value.ToString();
+                string endday = Time_CheckOut.Value.ToString();
                 int customerID = int.Parse(Txt_Customer_Identity.Texts);
                 int roomNumber = int.Parse(Txt_Room_Number.Texts);
                 string status = string.Empty;
@@ -246,6 +247,11 @@ namespace GUI.Dashboard
             Txt_Room_Status.Texts = string.Empty;
             Txt_Room_Type.Texts = string.Empty;
         }
+        private void dateTimePickerCheckIn_ValueChanged(object sender, EventArgs e)
+        {
+            Time_CheckOut.MinDate = Time_CheckIn.Value;
+        }
+
         private void SearchByCustomer_Identity(int identity)
         {
             Table_Rental.DataSource = Logic_Rental.CheckLogicSearchByCustomer_Identity(identity);
@@ -258,23 +264,33 @@ namespace GUI.Dashboard
         }
         private void SearchByCustomerIdentity(int identity)
         {
-            //Table_Rental.DataSource = Logic_Rental.CheckLogicSearchByCustomer_Identity(identity);
-            //Table_Rental.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
             Customer_Information customer_Information = Logic_Rental.GetCustomer_Information(identity);
-            Txt_Customer_Identity.Texts = customer_Information.Customer_Identity.ToString();
-            Txt_Customer_Name.Texts = customer_Information.Customer_Name;
-            Txt_Customer_Phone.Texts = customer_Information.Customer_Phone;
-            Txt_Customer_Address.Texts = customer_Information.Customer_Address.ToString();
+            if (customer_Information != null)
+            {
+                Txt_Customer_Identity.Texts = customer_Information.Customer_Identity.ToString();
+                Txt_Customer_Name.Texts = customer_Information.Customer_Name;
+                Txt_Customer_Phone.Texts = customer_Information.Customer_Phone;
+                Txt_Customer_Address.Texts = customer_Information.Customer_Address.ToString();
+            }
+            else
+            {
+                MessageBox.Show("No customer found");
+            }
         }
         private void SearchByRoomNumber(int number)
         {
-            //Table_Rental.DataSource = Logic_Rental.CheckLogicSearchByRoom_Number(number);
-            //Table_Rental.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
             Room_Information room_Information = Logic_Rental.GetRoom_Information(number);
-            Txt_Room_Number.Texts = room_Information.Number.ToString();
-            Txt_Room_Type.Texts = room_Information.RoomType.ToString();
-            Txt_Room_Status.Texts = room_Information.Status.ToString();
-            Txt_Room_Price.Texts = "" + (int)room_Information.Status;
+            if(room_Information != null)
+            {
+                Txt_Room_Number.Texts = ""+room_Information.Number;
+                Txt_Room_Type.Texts = room_Information.RoomType.ToString();
+                Txt_Room_Status.Texts = room_Information.Status.ToString();
+                Txt_Room_Price.Texts = "" + (int)room_Information.Status;
+            }
+            else
+            {
+                MessageBox.Show("No room found");
+            }
         }
         private void SearchByID(int id)
         {
@@ -324,6 +340,7 @@ namespace GUI.Dashboard
             Txt_IdentitySearch.ReadOnly = false;
             Time_CheckIn.Enabled = true;
             Time_CheckOut.Enabled = true;
+            ComboBox_RentalStatus.Visible = true;
 
             ActivateButton(sender);
             Btn_Search.Enabled = false;
@@ -383,7 +400,7 @@ namespace GUI.Dashboard
 
         private void Txt_IdentitySearch_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (isSearching && e.KeyChar == (char)Keys.Enter)
+            if (e.KeyChar == (char)Keys.Enter)
             {
                 try
                 {
@@ -392,23 +409,23 @@ namespace GUI.Dashboard
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("Wrong Input Format/No Customer Found");
+                    MessageBox.Show("Wrong Input Format");
                 }
             }
         }
 
         private void Txt_RoomNumberSearch_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (isSearching && e.KeyChar == (char)Keys.Enter)
+            if (e.KeyChar == (char)Keys.Enter)
             {
                 try
                 {
-                    int input = int.Parse(Txt_IdentitySearch.Texts);
+                    int input = int.Parse(Txt_RoomNumberSearch.Texts);
                     SearchByRoomNumber(input);
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("Wrong Input Format/No Customer Found");
+                    MessageBox.Show("Wrong Input Format");
                 }
             }
         }

@@ -74,10 +74,5 @@ namespace GUI.Dashboard
         {
             OpenChildForm(new RoomRental(), sender);
         }
-
-        private void roundButton4_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
