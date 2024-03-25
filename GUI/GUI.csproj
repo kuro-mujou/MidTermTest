@@ -162,5 +162,8 @@
   <ItemGroup>
     <None Include="Resources\Hotel_Icon.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="image picker.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
